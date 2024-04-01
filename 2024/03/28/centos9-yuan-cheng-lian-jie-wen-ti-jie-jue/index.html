@@ -20,25 +20,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"lishijie-me.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.19.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="悦读者 | 架构师 | 软件工程师 |">
-<meta property="og:type" content="website">
-<meta property="og:title" content="成行悦读笔记">
-<meta property="og:url" content="http://lishijie-me.github.io/index.html">
+    <meta name="description" content="之前一直都是在用CentOS7.9，版本迟迟不敢升级，直到最近重新堵了官网对 CentsOS Stream 9 的详细介绍，才决定升级，所以有了这个服务器搭建的篇章；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS9服务器搭建01-远程连接被拒绝问题解决">
+<meta property="og:url" content="http://lishijie-me.github.io/2024/03/28/centos9-yuan-cheng-lian-jie-wen-ti-jie-jue/index.html">
 <meta property="og:site_name" content="成行悦读笔记">
-<meta property="og:description" content="悦读者 | 架构师 | 软件工程师 |">
+<meta property="og:description" content="之前一直都是在用CentOS7.9，版本迟迟不敢升级，直到最近重新堵了官网对 CentsOS Stream 9 的详细介绍，才决定升级，所以有了这个服务器搭建的篇章；">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-03-28T14:46:30.000Z">
+<meta property="article:modified_time" content="2024-04-01T12:18:54.978Z">
 <meta property="article:author" content="成行（lishijie-me）">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="服务器">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://lishijie-me.github.io/">
+<link rel="canonical" href="http://lishijie-me.github.io/2024/03/28/centos9-yuan-cheng-lian-jie-wen-ti-jie-jue/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://lishijie-me.github.io/2024/03/28/centos9-yuan-cheng-lian-jie-wen-ti-jie-jue/","path":"2024/03/28/centos9-yuan-cheng-lian-jie-wen-ti-jie-jue/","title":"CentOS9服务器搭建01-远程连接被拒绝问题解决"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>成行悦读笔记</title>
+<title>CentOS9服务器搭建01-远程连接被拒绝问题解决 | 成行悦读笔记</title>
   
 
 
@@ -71,7 +75,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">成行悦读笔记</h1>
+      <p class="site-title">成行悦读笔记</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">公众号 【成行技术】</p>
@@ -125,7 +129,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -138,6 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%8C%85"><span class="nav-number">2.</span> <span class="nav-text">安装包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF"><span class="nav-number">3.</span> <span class="nav-text">查看系统信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98-%E5%8F%8A-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">4.</span> <span class="nav-text">遇到的问题 及 解决方案</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -199,117 +204,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://lishijie-me.github.io/2024/04/01/centos9-jdk-an-zhuang/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="成行（lishijie-me）">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="成行悦读笔记">
-      <meta itemprop="description" content=" 悦读者 | 架构师 | 软件工程师 |  ">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 成行悦读笔记">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/04/01/centos9-jdk-an-zhuang/" class="post-title-link" itemprop="url">CentOS9服务器搭建01-JDK安装</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2024-04-01 22:46:53 / 修改时间：22:52:21" itemprop="dateCreated datePublished" datetime="2024-04-01T22:46:53+08:00">2024-04-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.4k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>在CenntOS Stream 9 上安装 最新的稳定版JDK（前些天JDK22也出来了，由于不是长期支持版，这里就不演示了，我们还是用JDK21.0.2）</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/04/01/centos9-jdk-an-zhuang/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://lishijie-me.github.io/2024/03/28/centos9-yuan-cheng-lian-jie-wen-ti-jie-jue/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -323,13 +228,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 成行悦读笔记">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="CentOS9服务器搭建01-远程连接被拒绝问题解决 | 成行悦读笔记">
+      <meta itemprop="description" content="之前一直都是在用CentOS7.9，版本迟迟不敢升级，直到最近重新堵了官网对 CentsOS Stream 9 的详细介绍，才决定升级，所以有了这个服务器搭建的篇章；">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/03/28/centos9-yuan-cheng-lian-jie-wen-ti-jie-jue/" class="post-title-link" itemprop="url">CentOS9服务器搭建01-远程连接被拒绝问题解决</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          CentOS9服务器搭建01-远程连接被拒绝问题解决
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -376,23 +281,41 @@
     </span>
 </div>
 
+            <div class="post-description">之前一直都是在用CentOS7.9，版本迟迟不敢升级，直到最近重新堵了官网对 CentsOS Stream 9 的详细介绍，才决定升级，所以有了这个服务器搭建的篇章；</div>
         </div>
       </header>
 
     
     
     
-    <div class="post-body" itemprop="articleBody">
-          <p>之前一直都是在用CentOS7.9，版本迟迟不敢升级，直到最近重新堵了官网对 CentsOS Stream 9 的详细介绍，才决定升级，所以有了这个服务器搭建的篇章；</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/03/28/centos9-yuan-cheng-lian-jie-wen-ti-jie-jue/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
+    <div class="post-body" itemprop="articleBody"><span id="more"></span>
+
+<blockquote>
+<p>CentOS Stream 9 的 Linux内核版本是 5.14.0，已经算是非常新版本了。<br>这里关于系统的安装问题，我们就跳过了，网上大把的教程，大家可以自行搜搜<br>CentOS Stream 9 安装完成，离真正可用的服务器还缺很多东西，最主要的就是网络和软件<br>本文主要是 我在安装系统、连接网络过程中遇到的一些问题总结</p>
+</blockquote>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>VMware 17.5.1<br/><br>CentOS Stream 9</p>
+</blockquote>
+<h2 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h2><ul>
+<li>获取<a target="_blank" rel="noopener" href="https://www.centos.org/centos-stream/">安装包</a>进行安装</li>
+</ul>
+<h2 id="查看系统信息"><a href="#查看系统信息" class="headerlink" title="查看系统信息"></a>查看系统信息</h2><ul>
+<li><p>查看系统版本号</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 查看 CentOS 版本号</span><br><span class="line">cat /etc/redhat-release</span><br><span class="line"></span><br><span class="line"># 查看 Linux 内核版本号</span><br><span class="line">uname -r</span><br><span class="line">或 </span><br><span class="line">uname -a</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看防火墙状态</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status firewalld</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看已开放的端口列表</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --list-port</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>开启 <code>80</code> 端口权限并让端口生效</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">开启端口</span></span><br><span class="line">firewall-cmd --zone=public --add-port=80/tcp --permanent</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">重载防火墙，让端口权限生效</span></span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="遇到的问题-及-解决方案"><a href="#遇到的问题-及-解决方案" class="headerlink" title="遇到的问题 及 解决方案"></a>遇到的问题 及 解决方案</h2><ul>
+<li>ssh用户密码正确但是登录时却报被拒绝<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># 打开配置文件</span><br><span class="line">cd /etc/ssh/</span><br><span class="line">vi sshd_config</span><br><span class="line"></span><br><span class="line"># 在文件中添加如下配置</span><br><span class="line">PermitRootLogin yes</span><br><span class="line"></span><br><span class="line"># 重启 ssh 服务</span><br><span class="line">systemctl restart sshd</span><br><span class="line"></span><br><span class="line"># 注意：这里可能会报错，我因为写错了命令，报错如下：</span><br><span class="line">Job for sshd.service failed because the control process exited with error code.</span><br><span class="line">See &quot;systemctl status sshd.service&quot; and &quot;journalctl -xeu sshd.service&quot; for details.</span><br><span class="line"></span><br><span class="line"># 如果找不到问题所在，可以在当前目录下执行以下命令，会显示出来具体错误位置</span><br><span class="line">sshd -T</span><br><span class="line"></span><br><span class="line">按如上操作后，再次连接即可完成登录成功</span><br></pre></td></tr></table></figure></li>
+</ul>
+
     </div>
 
     
@@ -400,109 +323,83 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="成行（lishijie-me） 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="成行（lishijie-me） 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
 </div>
 
+          
 
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://lishijie-me.github.io/2024/03/27/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="成行（lishijie-me）">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="成行悦读笔记">
-      <meta itemprop="description" content=" 悦读者 | 架构师 | 软件工程师 |  ">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 成行悦读笔记">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/03/27/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-03-27 22:46:30" itemprop="dateCreated datePublished" datetime="2024-03-27T22:46:30+08:00">2024-03-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-04-01 20:51:47" itemprop="dateModified" datetime="2024-04-01T20:51:47+08:00">2024-04-01</time>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>367</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>原作者： </strong>成行（lishijie-me）
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://lishijie-me.github.io/2024/03/28/centos9-yuan-cheng-lian-jie-wen-ti-jie-jue/" title="CentOS9服务器搭建01-远程连接被拒绝问题解决">http://lishijie-me.github.io/2024/03/28/centos9-yuan-cheng-lian-jie-wen-ti-jie-jue/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
 </div>
 
-        </div>
-      </header>
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>一二三四五六七八大九十</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/03/27/hello-world/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
+  <div class="social-list">
+
+      <div class="social-item">
+          <span class="social-link">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </span>
+
+          <img class="social-item-img" src="/images/wechat_channel.jpg">
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+              <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag"><i class="fa fa-tag"></i> 服务器</a>
+          </div>
+
         
-      
-    </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/03/27/hello-world/" rel="prev" title="Hello World">
+                  <i class="fa fa-angle-left"></i> Hello World
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/04/01/centos9-jdk-an-zhuang/" rel="next" title="CentOS9服务器搭建01-JDK安装">
+                  CentOS9服务器搭建01-JDK安装 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
   </article>
 </div>
+
 
 
 

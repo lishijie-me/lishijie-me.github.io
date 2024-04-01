@@ -1,28 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2024/03/27/hello-world/</url>
+    <title>CentOS9服务器搭建01-JDK安装</title>
+    <url>/2024/04/01/centos9-jdk-an-zhuang/</url>
     <content><![CDATA[<span id="more"></span>
 
-<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>CentOS Stream 9<br/><br>Jdk-21.0.2</p>
+</blockquote>
+<h2 id="获取安装包"><a href="#获取安装包" class="headerlink" title="获取安装包"></a>获取安装包</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.tar.gz</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h2><ul>
+<li><p>解压</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tar -zxvf jdk-21_linux-x64_bin.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>移动到指定位置</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">我一般都把软件安装在 /opt 目录下</span></span><br><span class="line">mv jdk-21.0.2 /opt/jdk-21</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置 JDK</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">打开配置文件</span></span><br><span class="line">vim /etc/profile</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 在最后 添加如下配置</span></span></span><br><span class="line">export JAVA_HOME=/opt/jdk-21</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>让配置生效</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>验证是否安装完成</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 查看版本号</span><br><span class="line">java -version</span><br><span class="line"></span><br><span class="line">## 出现如下信息，则表示安装成功</span><br><span class="line">java version &quot;21.0.2&quot; 2024-01-16 LTS</span><br><span class="line">Java(TM) SE Runtime Environment (build 21.0.2+13-LTS-58)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 21.0.2+13-LTS-58, mixed mode, sharing)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<blockquote>
+<p>安装完成后 验证 <code>JDK</code> 是否有效</p>
+</blockquote>
+<ul>
+<li><p>编写个 Java文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">public class JdkInstall &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        JdkInstall ins = new JdkInstall();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入源文件所在目录，命令行编译，生成 .class 文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">javac JdkInstall.java</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看class文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]# javap -c JdkInstall</span><br><span class="line">警告: 文件 .\JdkInstall.class 不包含类 JdkInstall</span><br><span class="line">Compiled from &quot;JdkInstall.java&quot;</span><br><span class="line">public class io.adam.demo.controller.JdkInstall &#123;</span><br><span class="line">  public io.shj.demo.controller.JdkInstall();</span><br><span class="line">    Code:</span><br><span class="line">       0: aload_0</span><br><span class="line">       1: invokespecial #1                  // Method java/lang/Object.&quot;&lt;init&gt;&quot;:()V</span><br><span class="line">       4: return</span><br><span class="line"></span><br><span class="line">  public static void main(java.lang.String[]);</span><br><span class="line">    Code:</span><br><span class="line">       0: new           #2                  // class io/shj/demo/controller/JdkInstall</span><br><span class="line">       3: dup</span><br><span class="line">       4: invokespecial #3                  // Method &quot;&lt;init&gt;&quot;:()V</span><br><span class="line">       7: astore_1</span><br><span class="line">       8: return</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>至此安装验证完成，整个环境也算是搭建完成了，后面可以上代码了，可以开心的玩耍了，哈哈~~</p>
 ]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>jdk安装</tag>
+      </tags>
   </entry>
   <entry>
     <title>CentOS9服务器搭建01-远程连接被拒绝问题解决</title>
-    <url>/2024/03/28/linux-xi-tong-01/</url>
+    <url>/2024/03/28/centos9-yuan-cheng-lian-jie-wen-ti-jie-jue/</url>
     <content><![CDATA[<span id="more"></span>
 
 <blockquote>
@@ -58,5 +86,25 @@
         <tag>Linux</tag>
         <tag>服务器</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2024/03/27/hello-world/</url>
+    <content><![CDATA[<span id="more"></span>
+
+<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
 </search>
