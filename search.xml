@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>CentOS9服务器搭建01-JDK安装</title>
+    <title>CentOS9服务器搭建-JDK安装</title>
     <url>/2024/04/01/centos9-jdk-an-zhuang/</url>
     <content><![CDATA[<span id="more"></span>
 
@@ -42,14 +42,14 @@
 <p>至此安装验证完成，整个环境也算是搭建完成了，后面可以上代码了，可以开心的玩耍了，哈哈~~</p>
 ]]></content>
       <categories>
-        <category>linux</category>
+        <category>Linux服务器搭建</category>
       </categories>
       <tags>
         <tag>jdk安装</tag>
       </tags>
   </entry>
   <entry>
-    <title>CentOS9服务器搭建01-远程连接被拒绝问题解决</title>
+    <title>CentOS9服务器搭建-远程连接被拒绝问题解决</title>
     <url>/2024/03/28/centos9-yuan-cheng-lian-jie-wen-ti-jie-jue/</url>
     <content><![CDATA[<span id="more"></span>
 
@@ -80,7 +80,7 @@
 </ul>
 ]]></content>
       <categories>
-        <category>CentOS9服务器搭建</category>
+        <category>Linux服务器搭建</category>
       </categories>
       <tags>
         <tag>Linux</tag>
