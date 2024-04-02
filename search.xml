@@ -108,6 +108,60 @@
       </tags>
   </entry>
   <entry>
+    <title>我的笔记合集</title>
+    <url>/todo/</url>
+    <content><![CDATA[<h2 id="Linux-服务器搭建"><a href="#Linux-服务器搭建" class="headerlink" title="Linux 服务器搭建"></a><code>Linux</code> 服务器搭建</h2><details>
+<summary>点击查看合集</summary>  
+
+<ul>
+<li><a href="http://lishijie-me.github.io/linux-server-01/">CentOS9服务器搭建-远程连接被拒绝问题解决</a></li>
+<li><a href="http://lishijie-me.github.io/linux-server-02/">CentOS9服务器搭建-JDK安装（离线安装，亲测可用）</a></li>
+<li><a href="http://lishijie-me.github.io/linux-server-03/">CentOS9服务器搭建-安装 MySQL8.x（离线安装，亲测可用）</a></li>
+</ul>
+<p>  <br>TODO<br/></p>
+<ul>
+<li><a href="http://lishijie-me.github.io/linux-server-04/">CentOS9服务器搭建-安装 Redis7.x（离线安装，亲测可用）</a></li>
+<li><a href="http://lishijie-me.github.io/linux-server-05/">CentOS9服务器搭建-安装 RocketMQ5.x（离线安装，亲测可用）</a></li>
+<li><a href="http://lishijie-me.github.io/linux-server-06/">CentOS9服务器搭建-安装 Kafka3.x（离线安装，亲测可用）</a></li>
+<li><a href="http://lishijie-me.github.io/linux-server-07/">CentOS9服务器搭建-安装 ElasticSearch8.x（离线安装，亲测可用）</a></li>
+<li><a href="http://lishijie-me.github.io/linux-server-08/">CentOS9服务器搭建-安装 Nacos2.x（离线安装，亲测可用）</a></details></li>
+</ul>
+<br/>
+
+<h2 id="Spring-源码悦读-TODO"><a href="#Spring-源码悦读-TODO" class="headerlink" title="Spring 源码悦读( TODO )"></a><code>Spring</code> 源码悦读( TODO )</h2><blockquote>
+<p>这里如无特殊说明，源码均来自于 <code>Spring-6.x</code></p>
+</blockquote>
+<details>
+<summary>点击查看合集</summary>  
+
+<ul>
+<li><a href="http://lishijie-me.github.io/spring-source-01/">Spring6源码悦读-bean</a></details></li>
+</ul>
+<br/>
+
+<h2 id="JDK-源码悦读-TODO"><a href="#JDK-源码悦读-TODO" class="headerlink" title="JDK 源码悦读( TODO )"></a><code>JDK</code> 源码悦读( TODO )</h2><blockquote>
+<p>这里如无特殊说明，源码均来自于 <code>JDK-21.0.2</code></p>
+</blockquote>
+<details>
+<summary>点击查看合集</summary>  
+
+<ul>
+<li><a href="http://lishijie-me.github.io/jdk-source-01/">JDK21源码悦读-集合 List</a></details></li>
+</ul>
+<br/>
+
+<h2 id="读书笔记-TODO"><a href="#读书笔记-TODO" class="headerlink" title="读书笔记( TODO )"></a>读书笔记( TODO )</h2><blockquote>
+<p>多读书，多看报，少吃零食，多运动</p>
+</blockquote>
+<details>
+<summary>点击查看合集</summary>  
+
+<ul>
+<li><a href="http://lishijie-me.github.io/reading-book-01/">《鸟哥的 <code>Linux</code> 私房菜》悦读笔记</a></details></li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>CentOS9服务器搭建-安装 MySQL8.x（离线安装，亲测可用）</title>
     <url>/linux-server-03/</url>
     <content><![CDATA[<span id="more"></span>
@@ -153,38 +207,5 @@
         <tag>Typora</tag>
         <tag>Markdown</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>我的笔记合集</title>
-    <url>/todo/</url>
-    <content><![CDATA[<h2 id="Linux-服务器搭建"><a href="#Linux-服务器搭建" class="headerlink" title="Linux 服务器搭建"></a><code>Linux</code> 服务器搭建</h2><details>
-<summary>点击查看合集</summary>  
-
-<ul>
-<li><a href="http://lishijie-me.github.io/linux-server-01/">CentOS9服务器搭建-远程连接被拒绝问题解决</a></li>
-<li><a href="http://lishijie-me.github.io/linux-server-02/">CentOS9服务器搭建-JDK安装（离线安装，亲测可用）</a></li>
-<li><a href="http://lishijie-me.github.io/linux-server-03/">CentOS9服务器搭建-安装 MySQL8.x（离线安装，亲测可用）</a></li>
-</ul>
-<p>  <br>TODO<br/></p>
-<ul>
-<li><a href="http://lishijie-me.github.io/linux-server-04/">CentOS9服务器搭建-安装 Redis7.x（离线安装，亲测可用）</a></li>
-<li><a href="http://lishijie-me.github.io/linux-server-05/">CentOS9服务器搭建-安装 RocketMQ5.x（离线安装，亲测可用）</a></li>
-<li><a href="http://lishijie-me.github.io/linux-server-06/">CentOS9服务器搭建-安装 Kafka3.x（离线安装，亲测可用）</a></li>
-<li><a href="http://lishijie-me.github.io/linux-server-07/">CentOS9服务器搭建-安装 ElasticSearch8.x（离线安装，亲测可用）</a></li>
-<li><a href="http://lishijie-me.github.io/linux-server-08/">CentOS9服务器搭建-安装 Nacos2.x（离线安装，亲测可用）</a></details></li>
-</ul>
-<br/>
-
-<h2 id="JDK-源码悦读-TODO"><a href="#JDK-源码悦读-TODO" class="headerlink" title="JDK 源码悦读( TODO )"></a><code>JDK</code> 源码悦读( TODO )</h2><blockquote>
-<p>这里如无特殊说明，源码均来自于 <code>JDK-21.0.2</code></p>
-</blockquote>
-<details>
-<summary>点击查看合集</summary>  
-
-<ul>
-<li><a href="http://lishijie-me.github.io/jdk-source-01/">JDK21源码悦读-集合 List</a></li>
-<li><a href="http://lishijie-me.github.io/jdk-source-02/">JDK21源码悦读-集合 Map</a></details></li>
-</ul>
-]]></content>
   </entry>
 </search>
