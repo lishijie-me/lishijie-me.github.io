@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Hello World</title>
-    <url>/2024/hello-world/</url>
+    <url>/hello-world/</url>
     <content><![CDATA[<span id="more"></span>
 
 <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -22,7 +22,7 @@
   </entry>
   <entry>
     <title>CentOS9服务器搭建-远程连接被拒绝问题解决</title>
-    <url>/2024/linux-server-01/</url>
+    <url>/linux-server-01/</url>
     <content><![CDATA[<span id="more"></span>
 
 <blockquote>
@@ -61,7 +61,7 @@
   </entry>
   <entry>
     <title>CentOS9服务器搭建-JDK安装</title>
-    <url>/2024/linux-server-02/</url>
+    <url>/linux-server-02/</url>
     <content><![CDATA[<span id="more"></span>
 
 <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
@@ -109,7 +109,7 @@
   </entry>
   <entry>
     <title>CentOS9服务器搭建-安装 MySQL8.x（离线安装，亲测可用）</title>
-    <url>/2024/linux-server-03/</url>
+    <url>/linux-server-03/</url>
     <content><![CDATA[<span id="more"></span>
 
 <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
@@ -156,22 +156,22 @@
   </entry>
   <entry>
     <title>置顶：我的文章合集</title>
-    <url>/2024/todo/</url>
+    <url>/todo/</url>
     <content><![CDATA[<h2 id="Linux-服务器搭建"><a href="#Linux-服务器搭建" class="headerlink" title="Linux 服务器搭建"></a><code>Linux</code> 服务器搭建</h2><details>
 <summary>点击查看合集</summary>  
 
 <ul>
-<li><a href="http://lishijie-me.github.io/2024/linux-server-01/">CentOS9服务器搭建-远程连接被拒绝问题解决</a></li>
-<li><a href="http://lishijie-me.github.io/2024/linux-server-02/">CentOS9服务器搭建-JDK安装（离线安装，亲测可用）</a></li>
-<li><a href="http://lishijie-me.github.io/2024/linux-server-03/">CentOS9服务器搭建-安装 MySQL8.x（离线安装，亲测可用）</a></li>
+<li><a href="http://lishijie-me.github.io/linux-server-01/">CentOS9服务器搭建-远程连接被拒绝问题解决</a></li>
+<li><a href="http://lishijie-me.github.io/linux-server-02/">CentOS9服务器搭建-JDK安装（离线安装，亲测可用）</a></li>
+<li><a href="http://lishijie-me.github.io/linux-server-03/">CentOS9服务器搭建-安装 MySQL8.x（离线安装，亲测可用）</a></li>
 </ul>
 <p>  <br>TODO<br/></p>
 <ul>
-<li><a href="http://lishijie-me.github.io/2024/linux-server-04/">CentOS9服务器搭建-安装 Redis7.x（离线安装，亲测可用）</a></li>
-<li><a href="http://lishijie-me.github.io/2024/linux-server-05/">CentOS9服务器搭建-安装 RocketMQ5.x（离线安装，亲测可用）</a></li>
-<li><a href="http://lishijie-me.github.io/2024/linux-server-06/">CentOS9服务器搭建-安装 Kafka3.x（离线安装，亲测可用）</a></li>
-<li><a href="http://lishijie-me.github.io/2024/linux-server-07/">CentOS9服务器搭建-安装 ElasticSearch8.x（离线安装，亲测可用）</a></li>
-<li><a href="http://lishijie-me.github.io/2024/linux-server-08/">CentOS9服务器搭建-安装 Nacos2.x（离线安装，亲测可用）</a></details></li>
+<li><a href="http://lishijie-me.github.io/linux-server-04/">CentOS9服务器搭建-安装 Redis7.x（离线安装，亲测可用）</a></li>
+<li><a href="http://lishijie-me.github.io/linux-server-05/">CentOS9服务器搭建-安装 RocketMQ5.x（离线安装，亲测可用）</a></li>
+<li><a href="http://lishijie-me.github.io/linux-server-06/">CentOS9服务器搭建-安装 Kafka3.x（离线安装，亲测可用）</a></li>
+<li><a href="http://lishijie-me.github.io/linux-server-07/">CentOS9服务器搭建-安装 ElasticSearch8.x（离线安装，亲测可用）</a></li>
+<li><a href="http://lishijie-me.github.io/linux-server-08/">CentOS9服务器搭建-安装 Nacos2.x（离线安装，亲测可用）</a></details></li>
 </ul>
 <br/>
 
@@ -182,8 +182,8 @@
 <summary>点击查看合集</summary>  
 
 <ul>
-<li><a href="http://lishijie-me.github.io/2024/jdk-source-01/">JDK21源码悦读-集合 List</a></li>
-<li><a href="http://lishijie-me.github.io/2024/jdk-source-02/">JDK21源码悦读-集合 Map</a></details></li>
+<li><a href="http://lishijie-me.github.io/jdk-source-01/">JDK21源码悦读-集合 List</a></li>
+<li><a href="http://lishijie-me.github.io/jdk-source-02/">JDK21源码悦读-集合 Map</a></details></li>
 </ul>
 ]]></content>
   </entry>
