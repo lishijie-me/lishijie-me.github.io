@@ -60,27 +60,6 @@
       </tags>
   </entry>
   <entry>
-    <title>置顶：我的文章合集</title>
-    <url>/2024/todo/</url>
-    <content><![CDATA[<ul>
-<li>Linux 服务器搭建<details>
-<summary>点击查看合集</summary>  
-
-<ul>
-<li><a href="http://lishijie-me.github.io/2024/linux-server-01/">CentOS9服务器搭建-远程连接被拒绝问题解决</a></li>
-<li><a href="http://lishijie-me.github.io/2024/linux-server-02/">CentOS9服务器搭建-JDK安装（离线安装，亲测可用）</a></li>
-<li><a href="http://lishijie-me.github.io/2024/linux-server-03/">CentOS9服务器搭建-安装 MySQL8.x（离线安装，亲测可用）</a><br><br>TODO<br/></li>
-<li><a href="http://lishijie-me.github.io/2024/linux-server-04/">CentOS9服务器搭建-安装 Redis7.x（离线安装，亲测可用）</a></li>
-<li><a href="http://lishijie-me.github.io/2024/linux-server-05/">CentOS9服务器搭建-安装 RocketMQ5.x（离线安装，亲测可用）</a></li>
-<li><a href="http://lishijie-me.github.io/2024/linux-server-06/">CentOS9服务器搭建-安装 Kafka3.x（离线安装，亲测可用）</a></li>
-<li><a href="http://lishijie-me.github.io/2024/linux-server-07/">CentOS9服务器搭建-安装 ElasticSearch8.x（离线安装，亲测可用）</a></li>
-<li><a href="http://lishijie-me.github.io/2024/linux-server-08/">CentOS9服务器搭建-安装 Nacos2.x（离线安装，亲测可用）</a></li>
-</ul>
-</li>
-</ul>
-</details>]]></content>
-  </entry>
-  <entry>
     <title>CentOS9服务器搭建-JDK安装</title>
     <url>/2024/linux-server-02/</url>
     <content><![CDATA[<span id="more"></span>
@@ -174,5 +153,38 @@
         <tag>Typora</tag>
         <tag>Markdown</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>置顶：我的文章合集</title>
+    <url>/2024/todo/</url>
+    <content><![CDATA[<h2 id="Linux-服务器搭建"><a href="#Linux-服务器搭建" class="headerlink" title="Linux 服务器搭建"></a><code>Linux</code> 服务器搭建</h2><details>
+<summary>点击查看合集</summary>  
+
+<ul>
+<li><a href="http://lishijie-me.github.io/2024/linux-server-01/">CentOS9服务器搭建-远程连接被拒绝问题解决</a></li>
+<li><a href="http://lishijie-me.github.io/2024/linux-server-02/">CentOS9服务器搭建-JDK安装（离线安装，亲测可用）</a></li>
+<li><a href="http://lishijie-me.github.io/2024/linux-server-03/">CentOS9服务器搭建-安装 MySQL8.x（离线安装，亲测可用）</a></li>
+</ul>
+<p>  <br>TODO<br/></p>
+<ul>
+<li><a href="http://lishijie-me.github.io/2024/linux-server-04/">CentOS9服务器搭建-安装 Redis7.x（离线安装，亲测可用）</a></li>
+<li><a href="http://lishijie-me.github.io/2024/linux-server-05/">CentOS9服务器搭建-安装 RocketMQ5.x（离线安装，亲测可用）</a></li>
+<li><a href="http://lishijie-me.github.io/2024/linux-server-06/">CentOS9服务器搭建-安装 Kafka3.x（离线安装，亲测可用）</a></li>
+<li><a href="http://lishijie-me.github.io/2024/linux-server-07/">CentOS9服务器搭建-安装 ElasticSearch8.x（离线安装，亲测可用）</a></li>
+<li><a href="http://lishijie-me.github.io/2024/linux-server-08/">CentOS9服务器搭建-安装 Nacos2.x（离线安装，亲测可用）</a></details></li>
+</ul>
+<br/>
+
+<h2 id="JDK-源码悦读-TODO"><a href="#JDK-源码悦读-TODO" class="headerlink" title="JDK 源码悦读( TODO )"></a><code>JDK</code> 源码悦读( TODO )</h2><blockquote>
+<p>这里如无特殊说明，源码均来自于 <code>JDK-21.0.2</code></p>
+</blockquote>
+<details>
+<summary>点击查看合集</summary>  
+
+<ul>
+<li><a href="http://lishijie-me.github.io/2024/jdk-source-01/">JDK21源码悦读-集合 List</a></li>
+<li><a href="http://lishijie-me.github.io/2024/jdk-source-02/">JDK21源码悦读-集合 Map</a></details></li>
+</ul>
+]]></content>
   </entry>
 </search>
