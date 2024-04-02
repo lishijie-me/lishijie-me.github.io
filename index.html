@@ -227,7 +227,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/linux-server-03/" class="post-title-link" itemprop="url">CentOS Stream 9 安装 MySQL8.x（离线安装，亲测可用）</a>
+          <a href="/2024/linux-server-03/" class="post-title-link" itemprop="url">CentOS9服务器搭建-安装 MySQL8.x（离线安装，亲测可用）</a>
         </h2>
 
         <div class="post-meta-container">
@@ -239,7 +239,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2024-04-02 20:14:53 / 修改时间：20:18:16" itemprop="dateCreated datePublished" datetime="2024-04-02T20:14:53+08:00">2024-04-02</time>
+      <time title="创建时间：2024-04-02 20:14:53 / 修改时间：20:21:36" itemprop="dateCreated datePublished" datetime="2024-04-02T20:14:53+08:00">2024-04-02</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -306,7 +306,7 @@
 
 <h2 id="修改-root-用户密码"><a href="#修改-root-用户密码" class="headerlink" title="修改 root 用户密码"></a>修改 root 用户密码</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/mysql/bin/</span><br><span class="line"></span><br><span class="line"># 登录 mysql</span><br><span class="line">./mysql -u root -p</span><br><span class="line"></span><br><span class="line">执行后，输入初始化时记录下的随机密码，就会进入mysql</span><br><span class="line"></span><br><span class="line"># 修改密码</span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;12345&#x27;;</span><br><span class="line"></span><br><span class="line"># 刷新让密码生效</span><br><span class="line">flush privileges;</span><br><span class="line"></span><br><span class="line"># 选择 mysql 数据库，查看用户数据</span><br><span class="line">use mysql;</span><br><span class="line">select host, user, plugin, authentication_string from user;</span><br><span class="line"></span><br><span class="line"># 允许用户远程连接并生效</span><br><span class="line">update user set host=&#x27;%&#x27; where user=&#x27;root&#x27;;</span><br><span class="line"></span><br><span class="line">flush privileges;</span><br><span class="line"></span><br><span class="line"># 退出并用新密码登录，确认新密码生效</span><br></pre></td></tr></table></figure>
 
-<h2 id="设置自启动"><a href="#设置自启动" class="headerlink" title="设置自启动"></a>设置自启动</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 将 MySQL 添加到系统进程中</span><br><span class="line">cp /opt/mysql/support-files/mysql.server /etc/init.d/mysqld</span><br><span class="line">此时我们就可以使用服务进程操作mysql了</span><br><span class="line"></span><br><span class="line"># 设置 MySQL 自启动</span><br><span class="line">chmod +x /etc/init.d/mysqld</span><br><span class="line">systemctl enable mysqld</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="设置自启动（待办，这个可忽略，这里教程有点问题，待我再研究研究）"><a href="#设置自启动（待办，这个可忽略，这里教程有点问题，待我再研究研究）" class="headerlink" title="设置自启动（待办，这个可忽略，这里教程有点问题，待我再研究研究）"></a>设置自启动（待办，这个可忽略，这里教程有点问题，待我再研究研究）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 将 MySQL 添加到系统进程中</span><br><span class="line">cp /opt/mysql/support-files/mysql.server /etc/init.d/mysqld</span><br><span class="line">此时我们就可以使用服务进程操作mysql了</span><br><span class="line"></span><br><span class="line"># 设置 MySQL 自启动</span><br><span class="line">chmod +x /etc/init.d/mysqld</span><br><span class="line">systemctl enable mysqld</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h2 id="在防火墙中将3306端口开放"><a href="#在防火墙中将3306端口开放" class="headerlink" title="在防火墙中将3306端口开放"></a>在防火墙中将3306端口开放</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># --permanent 为永久生效，没有此参数 服务器重启后配置失效</span><br><span class="line">firewall-cmd --zone=public --add-port=3306/tcp --permanent</span><br><span class="line"># 重载生效</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
 
@@ -367,7 +367,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2024-04-02 00:02:05 / 修改时间：20:05:52" itemprop="dateCreated datePublished" datetime="2024-04-02T00:02:05+08:00">2024-04-02</time>
+      <time title="创建时间：2024-04-02 00:02:05 / 修改时间：20:21:23" itemprop="dateCreated datePublished" datetime="2024-04-02T00:02:05+08:00">2024-04-02</time>
     </span>
 
   
@@ -377,7 +377,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>58</span>
+      <span>92</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -402,6 +402,7 @@
 <ul>
 <li><a href="http://lishijie-me.github.io/2024/linux-server-01/">CentOS9服务器搭建-远程连接被拒绝问题解决</a></li>
 <li><a href="http://lishijie-me.github.io/2024/linux-server-02/">CentOS9服务器搭建-JDK安装</a></li>
+<li><a href="http://lishijie-me.github.io/2024/linux-server-03/">CentOS9服务器搭建-安装 MySQL8.x（离线安装，亲测可用）</a></li>
 </ul>
 </li>
 </ul>
