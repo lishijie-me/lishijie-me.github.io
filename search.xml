@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Hello World</title>
-    <url>/2024/03/27/hello-world/</url>
+    <url>/2024/hello-world/</url>
     <content><![CDATA[<span id="more"></span>
 
 <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -22,7 +22,7 @@
   </entry>
   <entry>
     <title>CentOS9服务器搭建-远程连接被拒绝问题解决</title>
-    <url>/2024/03/28/linux-server-01/</url>
+    <url>/2024/linux-server-01/</url>
     <content><![CDATA[<span id="more"></span>
 
 <blockquote>
@@ -61,7 +61,7 @@
   </entry>
   <entry>
     <title>CentOS9服务器搭建-JDK安装</title>
-    <url>/2024/04/01/linux-server-02/</url>
+    <url>/2024/linux-server-02/</url>
     <content><![CDATA[<span id="more"></span>
 
 <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
@@ -109,14 +109,14 @@
   </entry>
   <entry>
     <title>置顶：我的文章合集</title>
-    <url>/2024/04/02/todo/</url>
+    <url>/2024/todo/</url>
     <content><![CDATA[<ul>
 <li>Linux 服务器搭建<details>
 <summary>点击查看合集</summary>  
 
 <ul>
-<li><a href="http://localhost:4000/2024/04/01/linux-server-01/">CentOS9服务器搭建-远程连接被拒绝问题解决</a></li>
-<li><a href="http://localhost:4000/2024/04/01/linux-server-02/">CentOS9服务器搭建-JDK安装</a></li>
+<li><a href="http://localhost:4000/2024/linux-server-01/">CentOS9服务器搭建-远程连接被拒绝问题解决</a></li>
+<li><a href="http://localhost:4000/2024/linux-server-02/">CentOS9服务器搭建-JDK安装</a></li>
 </ul>
 </li>
 </ul>
