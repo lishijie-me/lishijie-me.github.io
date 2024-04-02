@@ -40,19 +40,24 @@
       </tags>
   </entry>
   <entry>
-    <title>置顶：我的文章合集</title>
-    <url>/2024/todo/</url>
-    <content><![CDATA[<ul>
-<li>Linux 服务器搭建<details>
-<summary>点击查看合集</summary>  
+    <title>Hello World</title>
+    <url>/2024/hello-world/</url>
+    <content><![CDATA[<span id="more"></span>
 
-<ul>
-<li><a href="http://lishijie-me.github.io/2024/linux-server-01/">CentOS9服务器搭建-远程连接被拒绝问题解决</a></li>
-<li><a href="http://lishijie-me.github.io/2024/linux-server-02/">CentOS9服务器搭建-JDK安装</a></li>
-</ul>
-</li>
-</ul>
-</details>]]></content>
+<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>CentOS9服务器搭建-JDK安装</title>
@@ -103,23 +108,65 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2024/hello-world/</url>
+    <title>CentOS Stream 9 安装 MySQL8.x（离线安装，亲测可用）</title>
+    <url>/2024/linux-server-03/</url>
     <content><![CDATA[<span id="more"></span>
 
-<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>CentOS Stream 9<br/><br>MySQL-8.0.26</p>
+</blockquote>
+<h2 id="安装包获取"><a href="#安装包获取" class="headerlink" title="安装包获取"></a>安装包获取</h2><p>官网查询</p>
+<h2 id="查看是否已安装过-MySQL-或-MariaDB"><a href="#查看是否已安装过-MySQL-或-MariaDB" class="headerlink" title="查看是否已安装过 MySQL 或 MariaDB"></a>查看是否已安装过 MySQL 或 MariaDB</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 查看是否安装</span><br><span class="line">rpm -qa | grep mariadb</span><br><span class="line">rpm -qa | grep mysql</span><br><span class="line"></span><br><span class="line"># 强制删除</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 解压</span><br><span class="line">tar -xvf mysql-8.0.36-linux-glibc2.28-x86_64.tar.xz</span><br><span class="line"># 重命名文件夹</span><br><span class="line">mv mysql-8.0.36-linux-glibc2.28-x86_64 /opt/mysql</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h2 id="修改-MySQL-配置文件"><a href="#修改-MySQL-配置文件" class="headerlink" title="修改 MySQL 配置文件"></a>修改 MySQL 配置文件</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vi /etc/my.cnf</span><br></pre></td></tr></table></figure>
+<ul>
+<li>my.cnf 内容如下<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line"># 设置3306端口</span><br><span class="line">port=3306</span><br><span class="line"># 设置mysql的安装目录</span><br><span class="line">basedir=/opt/mysql</span><br><span class="line"># 设置mysql数据库的数据存放目录</span><br><span class="line">datadir=/opt/mysql/data</span><br><span class="line"># 允许最大连接数</span><br><span class="line">max_connections=10000</span><br><span class="line"># 允许连接失败的次数。这是为了防止有人从该主机试图攻击数据库系统</span><br><span class="line">max_connect_errors=10</span><br><span class="line"># 服务端使用的字符集默认为UTF8MB4</span><br><span class="line">character-set-server=utf8mb4</span><br><span class="line"># 创建新表时将使用的默认存储引擎</span><br><span class="line">default-storage-engine=INNODB</span><br><span class="line"># 默认使用“mysql_native_password”插件认证</span><br><span class="line">default_authentication_plugin=mysql_native_password</span><br><span class="line">[mysql]</span><br><span class="line"># 设置mysql客户端默认字符集</span><br><span class="line">default-character-set=utf8mb4</span><br><span class="line">[client]</span><br><span class="line"># 设置mysql客户端连接服务端时默认使用的端口</span><br><span class="line">port=3306</span><br><span class="line">default-character-set=utf8mb4</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="安装目录赋权"><a href="#安装目录赋权" class="headerlink" title="安装目录赋权"></a>安装目录赋权</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chmod -R 777 /opt/mysql/</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h2 id="创建用户组及用户并赋权"><a href="#创建用户组及用户并赋权" class="headerlink" title="创建用户组及用户并赋权"></a>创建用户组及用户并赋权</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 进入安装目录</span><br><span class="line">cd /opt/mysql</span><br><span class="line">=============================第一种方式（推荐上线生产用）=====================================</span><br><span class="line"># 创建用户组</span><br><span class="line">groupadd mysql</span><br><span class="line"># 创建用户(-s /bin/false参数指定mysql用户仅拥有所有权，而没有登录权限)</span><br><span class="line">useradd -r -g mysql -s /bin/false mysql</span><br><span class="line"></span><br><span class="line"># 将用户添加到用户组</span><br><span class="line">chown -R mysql:mysql ./</span><br><span class="line">PS：上面的操作是进行权限分离，确保数据库的安全</span><br><span class="line">=============================第二种方式（推荐自我测试用）=====================================</span><br><span class="line"># 创建用户组</span><br><span class="line">groupadd mysql</span><br><span class="line"></span><br><span class="line"># 将用户添加到用户组</span><br><span class="line">useradd -g mysql mysql</span><br><span class="line"></span><br><span class="line"># 查看用户及用户组</span><br><span class="line">id mysql</span><br><span class="line">=============================我是结束线=====================================</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="创建数据文件夹"><a href="#创建数据文件夹" class="headerlink" title="创建数据文件夹"></a>创建数据文件夹</h2><blockquote>
+<p>后续所有的库表信息都会存放在这里</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 创建文件夹</span><br><span class="line">mkdir /opt/mysql/data</span><br><span class="line"># 赋权</span><br><span class="line">chmod -R 777 /opt/mysql/data</span><br><span class="line"># 变更所属用户</span><br><span class="line">chown -R mysql:mysql /opt/mysql/data</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 更改用户密码（如果需要的话。默认创建用户无密码，这里我没执行下面的修改命令）</span><br><span class="line"># 修改用户密码（这里要输入两次新密码）</span><br><span class="line"># passwd 用户名</span><br><span class="line"></span><br><span class="line"># 变更目录所属用户</span><br><span class="line">chown -R mysql:mysql /opt/mysql/</span><br><span class="line"></span><br><span class="line"># 切换用户</span><br><span class="line">su mysql</span><br><span class="line"></span><br><span class="line"># 进入目录</span><br><span class="line">cd /opt/mysql/bin/</span><br><span class="line"># 安装mysql，并记住初始化随机密码</span><br><span class="line">./mysqld --initialize --console</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 出现如下日志，记录临时密码</span><br><span class="line">[mysql@localhost bin]$ ./mysqld --initialize --console</span><br><span class="line">2024-03-24T06:03:30.168919Z 0 [Warning] [MY-010918] [Server] &#x27;default_authentication_plugin&#x27; is deprecated and will be removed in a future release. Please use authentication_policy instead.</span><br><span class="line">2024-03-24T06:03:30.168934Z 0 [System] [MY-013169] [Server] /opt/mysql/bin/mysqld (mysqld 8.0.36) initializing of server in progress as process 5952</span><br><span class="line">2024-03-24T06:03:30.173166Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.</span><br><span class="line">2024-03-24T06:03:30.323156Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.</span><br><span class="line">2024-03-24T06:03:32.111075Z 6 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: qaRu0ID*tby=</span><br><span class="line">2024-03-24T06:03:32.199360Z 6 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: &#x27;&#x27;mysql_native_password&#x27; is deprecated and will be removed in a future release. Please use caching_sha2_password instead&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="启动-MySQL-服务"><a href="#启动-MySQL-服务" class="headerlink" title="启动 MySQL 服务"></a>启动 MySQL 服务</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 启动 MySQL 服务</span><br><span class="line">cd /opt/mysql/support-files</span><br><span class="line">./mysql.server start</span><br><span class="line"></span><br><span class="line"># 打印日志（启动成功）</span><br><span class="line">Starting MySQL. SUCCESS! </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="修改-root-用户密码"><a href="#修改-root-用户密码" class="headerlink" title="修改 root 用户密码"></a>修改 root 用户密码</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /opt/mysql/bin/</span><br><span class="line"></span><br><span class="line"># 登录 mysql</span><br><span class="line">./mysql -u root -p</span><br><span class="line"></span><br><span class="line">执行后，输入初始化时记录下的随机密码，就会进入mysql</span><br><span class="line"></span><br><span class="line"># 修改密码</span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;12345&#x27;;</span><br><span class="line"></span><br><span class="line"># 刷新让密码生效</span><br><span class="line">flush privileges;</span><br><span class="line"></span><br><span class="line"># 选择 mysql 数据库，查看用户数据</span><br><span class="line">use mysql;</span><br><span class="line">select host, user, plugin, authentication_string from user;</span><br><span class="line"></span><br><span class="line"># 允许用户远程连接并生效</span><br><span class="line">update user set host=&#x27;%&#x27; where user=&#x27;root&#x27;;</span><br><span class="line"></span><br><span class="line">flush privileges;</span><br><span class="line"></span><br><span class="line"># 退出并用新密码登录，确认新密码生效</span><br></pre></td></tr></table></figure>
+
+<h2 id="设置自启动"><a href="#设置自启动" class="headerlink" title="设置自启动"></a>设置自启动</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 将 MySQL 添加到系统进程中</span><br><span class="line">cp /opt/mysql/support-files/mysql.server /etc/init.d/mysqld</span><br><span class="line">此时我们就可以使用服务进程操作mysql了</span><br><span class="line"></span><br><span class="line"># 设置 MySQL 自启动</span><br><span class="line">chmod +x /etc/init.d/mysqld</span><br><span class="line">systemctl enable mysqld</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="在防火墙中将3306端口开放"><a href="#在防火墙中将3306端口开放" class="headerlink" title="在防火墙中将3306端口开放"></a>在防火墙中将3306端口开放</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># --permanent 为永久生效，没有此参数 服务器重启后配置失效</span><br><span class="line">firewall-cmd --zone=public --add-port=3306/tcp --permanent</span><br><span class="line"># 重载生效</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用客户端进行连接测试即可"><a href="#使用客户端进行连接测试即可" class="headerlink" title="使用客户端进行连接测试即可"></a>使用客户端进行连接测试即可</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[root@localhost opt]# su mysql</span><br><span class="line">[mysql@localhost opt]$ cd /opt/mysql/bin/</span><br><span class="line">[mysql@localhost bin]$ ./mysql -u root -p</span><br><span class="line">Enter password: </span><br><span class="line">Welcome to the MySQL monitor.  Commands end with ; or \g.</span><br><span class="line">Your MySQL connection id is 8</span><br><span class="line">Server version: 8.0.36</span><br><span class="line"></span><br><span class="line">Copyright (c) 2000, 2024, Oracle and/or its affiliates.</span><br><span class="line"></span><br><span class="line">Oracle is a registered trademark of Oracle Corporation and/or its</span><br><span class="line">affiliates. Other names may be trademarks of their respective</span><br><span class="line">owners.</span><br><span class="line"></span><br><span class="line">Type &#x27;help;&#x27; or &#x27;\h&#x27; for help. Type &#x27;\c&#x27; to clear the current input statement.</span><br><span class="line"></span><br><span class="line">mysql&gt; </span><br></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>Linux服务器搭建</category>
+      </categories>
+      <tags>
+        <tag>Typora</tag>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>置顶：我的文章合集</title>
+    <url>/2024/todo/</url>
+    <content><![CDATA[<ul>
+<li>Linux 服务器搭建<details>
+<summary>点击查看合集</summary>  
+
+<ul>
+<li><a href="http://lishijie-me.github.io/2024/linux-server-01/">CentOS9服务器搭建-远程连接被拒绝问题解决</a></li>
+<li><a href="http://lishijie-me.github.io/2024/linux-server-02/">CentOS9服务器搭建-JDK安装</a></li>
+</ul>
+</li>
+</ul>
+</details>]]></content>
   </entry>
 </search>
