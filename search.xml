@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CentOS9服务器搭建-JDK安装</title>
+    <url>/linux-server-02/</url>
+    <content><![CDATA[<span id="more"></span>
+
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>CentOS Stream 9<br/><br>Jdk-21.0.2</p>
+</blockquote>
+<h2 id="获取安装包"><a href="#获取安装包" class="headerlink" title="获取安装包"></a>获取安装包</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.tar.gz</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h2><ul>
+<li><p>解压</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tar -zxvf jdk-21_linux-x64_bin.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>移动到指定位置</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">我一般都把软件安装在 /opt 目录下</span></span><br><span class="line">mv jdk-21.0.2 /opt/jdk-21</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置 JDK</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">打开配置文件</span></span><br><span class="line">vim /etc/profile</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 在最后 添加如下配置</span></span></span><br><span class="line">export JAVA_HOME=/opt/jdk-21</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>让配置生效</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>验证是否安装完成</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 查看版本号</span><br><span class="line">java -version</span><br><span class="line"></span><br><span class="line">## 出现如下信息，则表示安装成功</span><br><span class="line">java version &quot;21.0.2&quot; 2024-01-16 LTS</span><br><span class="line">Java(TM) SE Runtime Environment (build 21.0.2+13-LTS-58)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 21.0.2+13-LTS-58, mixed mode, sharing)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<blockquote>
+<p>安装完成后 验证 <code>JDK</code> 是否有效</p>
+</blockquote>
+<ul>
+<li><p>编写个 Java文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">public class JdkInstall &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        JdkInstall ins = new JdkInstall();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入源文件所在目录，命令行编译，生成 .class 文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">javac JdkInstall.java</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看class文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]# javap -c JdkInstall</span><br><span class="line">警告: 文件 .\JdkInstall.class 不包含类 JdkInstall</span><br><span class="line">Compiled from &quot;JdkInstall.java&quot;</span><br><span class="line">public class io.adam.demo.controller.JdkInstall &#123;</span><br><span class="line">  public io.shj.demo.controller.JdkInstall();</span><br><span class="line">    Code:</span><br><span class="line">       0: aload_0</span><br><span class="line">       1: invokespecial #1                  // Method java/lang/Object.&quot;&lt;init&gt;&quot;:()V</span><br><span class="line">       4: return</span><br><span class="line"></span><br><span class="line">  public static void main(java.lang.String[]);</span><br><span class="line">    Code:</span><br><span class="line">       0: new           #2                  // class io/shj/demo/controller/JdkInstall</span><br><span class="line">       3: dup</span><br><span class="line">       4: invokespecial #3                  // Method &quot;&lt;init&gt;&quot;:()V</span><br><span class="line">       7: astore_1</span><br><span class="line">       8: return</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>至此安装验证完成，整个环境也算是搭建完成了，后面可以上代码了，可以开心的玩耍了，哈哈~~</p>
+]]></content>
+      <categories>
+        <category>CentOS9服务器搭建</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>jdk源码悦读笔记(一)集合框架概述</title>
     <url>/jdk-source-01/</url>
     <content><![CDATA[<span id="more"></span>
@@ -43,54 +91,6 @@
 <h2 id="遇到的问题-及-解决方案"><a href="#遇到的问题-及-解决方案" class="headerlink" title="遇到的问题 及 解决方案"></a>遇到的问题 及 解决方案</h2><ul>
 <li>ssh用户密码正确但是登录时却报被拒绝<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 打开配置文件</span><br><span class="line">cd /etc/ssh/</span><br><span class="line">vi sshd_config</span><br><span class="line"></span><br><span class="line"># 在文件中添加如下配置</span><br><span class="line">PermitRootLogin yes</span><br><span class="line"></span><br><span class="line"># 重启 ssh 服务</span><br><span class="line">systemctl restart sshd</span><br><span class="line"></span><br><span class="line"># 注意：这里可能会报错，我因为写错了命令，报错如下：</span><br><span class="line">Job for sshd.service failed because the control process exited with error code.</span><br><span class="line">See &quot;systemctl status sshd.service&quot; and &quot;journalctl -xeu sshd.service&quot; for details.</span><br><span class="line"></span><br><span class="line"># 如果找不到问题所在，可以在当前目录下执行以下命令，会显示出来具体错误位置</span><br><span class="line">sshd -T</span><br><span class="line"></span><br><span class="line">按如上操作后，再次连接即可完成登录成功</span><br></pre></td></tr></table></figure></li>
 </ul>
-]]></content>
-      <categories>
-        <category>CentOS9服务器搭建</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CentOS9服务器搭建-JDK安装</title>
-    <url>/linux-server-02/</url>
-    <content><![CDATA[<span id="more"></span>
-
-<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>CentOS Stream 9<br/><br>Jdk-21.0.2</p>
-</blockquote>
-<h2 id="获取安装包"><a href="#获取安装包" class="headerlink" title="获取安装包"></a>获取安装包</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.tar.gz</span><br></pre></td></tr></table></figure>
-
-<h2 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h2><ul>
-<li><p>解压</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tar -zxvf jdk-21_linux-x64_bin.tar.gz</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>移动到指定位置</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">我一般都把软件安装在 /opt 目录下</span></span><br><span class="line">mv jdk-21.0.2 /opt/jdk-21</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>配置 JDK</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">打开配置文件</span></span><br><span class="line">vim /etc/profile</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 在最后 添加如下配置</span></span></span><br><span class="line">export JAVA_HOME=/opt/jdk-21</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>让配置生效</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>验证是否安装完成</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 查看版本号</span><br><span class="line">java -version</span><br><span class="line"></span><br><span class="line">## 出现如下信息，则表示安装成功</span><br><span class="line">java version &quot;21.0.2&quot; 2024-01-16 LTS</span><br><span class="line">Java(TM) SE Runtime Environment (build 21.0.2+13-LTS-58)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 21.0.2+13-LTS-58, mixed mode, sharing)</span><br></pre></td></tr></table></figure></li>
-</ul>
-<blockquote>
-<p>安装完成后 验证 <code>JDK</code> 是否有效</p>
-</blockquote>
-<ul>
-<li><p>编写个 Java文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">public class JdkInstall &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        JdkInstall ins = new JdkInstall();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>进入源文件所在目录，命令行编译，生成 .class 文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">javac JdkInstall.java</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看class文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]# javap -c JdkInstall</span><br><span class="line">警告: 文件 .\JdkInstall.class 不包含类 JdkInstall</span><br><span class="line">Compiled from &quot;JdkInstall.java&quot;</span><br><span class="line">public class io.adam.demo.controller.JdkInstall &#123;</span><br><span class="line">  public io.shj.demo.controller.JdkInstall();</span><br><span class="line">    Code:</span><br><span class="line">       0: aload_0</span><br><span class="line">       1: invokespecial #1                  // Method java/lang/Object.&quot;&lt;init&gt;&quot;:()V</span><br><span class="line">       4: return</span><br><span class="line"></span><br><span class="line">  public static void main(java.lang.String[]);</span><br><span class="line">    Code:</span><br><span class="line">       0: new           #2                  // class io/shj/demo/controller/JdkInstall</span><br><span class="line">       3: dup</span><br><span class="line">       4: invokespecial #3                  // Method &quot;&lt;init&gt;&quot;:()V</span><br><span class="line">       7: astore_1</span><br><span class="line">       8: return</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>至此安装验证完成，整个环境也算是搭建完成了，后面可以上代码了，可以开心的玩耍了，哈哈~~</p>
 ]]></content>
       <categories>
         <category>CentOS9服务器搭建</category>
@@ -283,6 +283,32 @@
       </tags>
   </entry>
   <entry>
+    <title>Spring源码悦读笔记(一)框架</title>
+    <url>/spring-source-01/</url>
+    <content><![CDATA[<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>Spring源码悦读</category>
+      </categories>
+      <tags>
+        <tag>Spring6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SpringBoot学习笔记(一)初识SpringBoot与框架整合</title>
+    <url>/springboot-demo-01/</url>
+    <content><![CDATA[<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>SpringBoot学习笔记</category>
+      </categories>
+      <tags>
+        <tag>springboot3</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我的笔记合集</title>
     <url>/todo/</url>
     <content><![CDATA[<h2 id="CentOS9-服务器搭建"><a href="#CentOS9-服务器搭建" class="headerlink" title="CentOS9 服务器搭建"></a>CentOS9 服务器搭建</h2><details>
@@ -349,31 +375,5 @@
       <categories>
         <category>todo</category>
       </categories>
-  </entry>
-  <entry>
-    <title>Spring源码悦读笔记(一)框架</title>
-    <url>/spring-source-01/</url>
-    <content><![CDATA[<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>Spring源码悦读</category>
-      </categories>
-      <tags>
-        <tag>Spring6</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SpringBoot学习笔记(一)初识SpringBoot与框架整合</title>
-    <url>/springboot-demo-01/</url>
-    <content><![CDATA[<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>SpringBoot学习笔记</category>
-      </categories>
-      <tags>
-        <tag>springboot3</tag>
-      </tags>
   </entry>
 </search>
