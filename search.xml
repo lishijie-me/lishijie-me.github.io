@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>jdk源码悦读笔记(一)集合框架串烧</title>
-    <url>/jdk-source-01/</url>
-    <content><![CDATA[<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>jdk源码悦读</category>
-      </categories>
-      <tags>
-        <tag>jdk</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CentOS9服务器搭建-远程连接被拒绝问题解决</title>
     <url>/linux-server-01/</url>
     <content><![CDATA[<span id="more"></span>
@@ -49,6 +36,19 @@
       </categories>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>jdk源码悦读笔记(一)集合框架串烧</title>
+    <url>/jdk-source-01/</url>
+    <content><![CDATA[<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>jdk源码悦读</category>
+      </categories>
+      <tags>
+        <tag>jdk</tag>
       </tags>
   </entry>
   <entry>
@@ -198,6 +198,19 @@
       </tags>
   </entry>
   <entry>
+    <title>《鸟哥的 `Linux` 私房菜》悦读笔记</title>
+    <url>/reading-book-01/</url>
+    <content><![CDATA[<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>读书悦读笔记</category>
+      </categories>
+      <tags>
+        <tag>reading</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CentOS7安装elasticsearch-8.12.1（亲测可用）（后续会升级成centos9）</title>
     <url>/linux-server-05/</url>
     <content><![CDATA[<span id="more"></span>
@@ -267,19 +280,6 @@
       </categories>
       <tags>
         <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>《鸟哥的 `Linux` 私房菜》悦读笔记</title>
-    <url>/reading-book-01/</url>
-    <content><![CDATA[<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>读书悦读笔记</category>
-      </categories>
-      <tags>
-        <tag>reading</tag>
       </tags>
   </entry>
   <entry>
