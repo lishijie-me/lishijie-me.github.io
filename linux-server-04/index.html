@@ -20,25 +20,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"lishijie-me.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.19.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="悦读者 | 架构师 | 软件工程师 |">
-<meta property="og:type" content="website">
-<meta property="og:title" content="成行悦读笔记">
-<meta property="og:url" content="http://lishijie-me.github.io/index.html">
+    <meta name="description" content="咱们今天就继续安装起来  安装环境 CentOS Stream 9Redis-7.2.4  获取安装包1wget https:&#x2F;&#x2F;download.redis.io&#x2F;releases&#x2F;redis-7.2.4.tar.gz 如果官网安装包不好取，安装包我放在文末了 安装依赖 由于Redis是使用C语言进行编写的，所以想要能成功的进行编译和运行，肯定少不了要进行环境的检查和安装  1234# 检">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS9 Redis7安装">
+<meta property="og:url" content="http://lishijie-me.github.io/linux-server-04/index.html">
 <meta property="og:site_name" content="成行悦读笔记">
-<meta property="og:description" content="悦读者 | 架构师 | 软件工程师 |">
+<meta property="og:description" content="咱们今天就继续安装起来  安装环境 CentOS Stream 9Redis-7.2.4  获取安装包1wget https:&#x2F;&#x2F;download.redis.io&#x2F;releases&#x2F;redis-7.2.4.tar.gz 如果官网安装包不好取，安装包我放在文末了 安装依赖 由于Redis是使用C语言进行编写的，所以想要能成功的进行编译和运行，肯定少不了要进行环境的检查和安装  1234# 检">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-04-07T10:21:46.000Z">
+<meta property="article:modified_time" content="2024-04-07T10:23:20.437Z">
 <meta property="article:author" content="成行（lishijie-me）">
+<meta property="article:tag" content="Typora">
+<meta property="article:tag" content="Markdown">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://lishijie-me.github.io/">
+<link rel="canonical" href="http://lishijie-me.github.io/linux-server-04/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://lishijie-me.github.io/linux-server-04/","path":"linux-server-04/","title":"CentOS9 Redis7安装"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>成行悦读笔记</title>
+<title>CentOS9 Redis7安装 | 成行悦读笔记</title>
   
 
 
@@ -71,7 +75,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">成行悦读笔记</h1>
+      <p class="site-title">成行悦读笔记</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">公众号 【成行技术】</p>
@@ -125,7 +129,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -138,6 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">安装环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%AE%89%E8%A3%85%E5%8C%85"><span class="nav-number">2.</span> <span class="nav-text">获取安装包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="nav-number">3.</span> <span class="nav-text">安装依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%8E%8B"><span class="nav-number">4.</span> <span class="nav-text">解压</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E5%85%A5%E8%A7%A3%E5%8E%8B%E7%9B%AE%E5%BD%95%E5%B9%B6%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85"><span class="nav-number">5.</span> <span class="nav-text">进入解压目录并编译安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8-Redis-%E6%9C%8D%E5%8A%A1-%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">6.</span> <span class="nav-text">启动 Redis 服务(两种方式)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%9B%B4%E6%8E%A5%E5%90%AF%E5%8A%A8"><span class="nav-number">6.1.</span> <span class="nav-text">1 直接启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E9%80%9A%E8%BF%87%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B%E6%96%B9%E5%BC%8F%E5%90%AF%E5%8A%A8"><span class="nav-number">6.2.</span> <span class="nav-text">2 通过守护进程方式启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8"><span class="nav-number">6.3.</span> <span class="nav-text">3 开机自启动</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -199,16 +204,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-      
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://lishijie-me.github.io/linux-server-04/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,13 +228,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 成行悦读笔记">
+      <meta itemprop="name" content="CentOS9 Redis7安装 | 成行悦读笔记">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/linux-server-04/" class="post-title-link" itemprop="url">CentOS9 Redis7安装</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          CentOS9 Redis7安装
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -243,6 +249,13 @@
     </span>
 
   
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
     <span class="post-meta-break"></span>
     <span class="post-meta-item" title="本文字数">
       <span class="post-meta-item-icon">
@@ -266,8 +279,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-          <span id="more"></span>
+    <div class="post-body" itemprop="articleBody"><span id="more"></span>
 
 <blockquote>
 <p>咱们今天就继续安装起来</p>
@@ -309,7 +321,6 @@
 
 <p><a href="">Redis安装包</a></p>
 
-      
     </div>
 
     
@@ -317,155 +328,80 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="成行（lishijie-me） 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="成行（lishijie-me） 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>原作者： </strong>成行（lishijie-me）
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://lishijie-me.github.io/linux-server-04/" title="CentOS9 Redis7安装">http://lishijie-me.github.io/linux-server-04/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <span class="social-link">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </span>
+
+          <img class="social-item-img" src="/images/wechat_channel.jpg">
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Typora/" rel="tag"><i class="fa fa-tag"></i> Typora</a>
+              <a href="/tags/Markdown/" rel="tag"><i class="fa fa-tag"></i> Markdown</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/linux-server-03/" rel="prev" title="CentOS9服务器搭建-安装 MySQL8.x（离线安装，亲测可用）">
+                  <i class="fa fa-angle-left"></i> CentOS9服务器搭建-安装 MySQL8.x（离线安装，亲测可用）
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
 
-
-
-
-      
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://lishijie-me.github.io/todo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="成行（lishijie-me）">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="成行悦读笔记">
-      <meta itemprop="description" content=" 悦读者 | 架构师 | 软件工程师 |  ">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 成行悦读笔记">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/todo/" class="post-title-link" itemprop="url">我的笔记合集</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2024-04-02 00:02:05 / 修改时间：21:22:13" itemprop="dateCreated datePublished" datetime="2024-04-02T00:02:05+08:00">2024-04-02</time>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>528</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="Linux-服务器搭建"><a href="#Linux-服务器搭建" class="headerlink" title="Linux 服务器搭建"></a><code>Linux</code> 服务器搭建</h2><details>
-<summary>点击查看合集</summary>  
-
-<ul>
-<li><a href="http://lishijie-me.github.io/linux-server-01/">CentOS9服务器搭建-远程连接被拒绝问题解决</a></li>
-<li><a href="http://lishijie-me.github.io/linux-server-02/">CentOS9服务器搭建-JDK安装（离线安装，亲测可用）</a></li>
-<li><a href="http://lishijie-me.github.io/linux-server-03/">CentOS9服务器搭建-安装 MySQL8.x（离线安装，亲测可用）</a></li>
-</ul>
-<p>  <br>TODO<br/></p>
-<ul>
-<li><a href="http://lishijie-me.github.io/linux-server-04/">CentOS9服务器搭建-安装 Redis7.x（离线安装，亲测可用）</a></li>
-<li><a href="http://lishijie-me.github.io/linux-server-05/">CentOS9服务器搭建-安装 RocketMQ5.x（离线安装，亲测可用）</a></li>
-<li><a href="http://lishijie-me.github.io/linux-server-06/">CentOS9服务器搭建-安装 Kafka3.x（离线安装，亲测可用）</a></li>
-<li><a href="http://lishijie-me.github.io/linux-server-07/">CentOS9服务器搭建-安装 ElasticSearch8.x（离线安装，亲测可用）</a></li>
-<li><a href="http://lishijie-me.github.io/linux-server-08/">CentOS9服务器搭建-安装 Nacos2.x（离线安装，亲测可用）</a></details></li>
-</ul>
-<br/>
-
-<h2 id="SpringBoot-整合实战-TODO"><a href="#SpringBoot-整合实战-TODO" class="headerlink" title="SpringBoot 整合实战( TODO )"></a><code>SpringBoot</code> 整合实战( TODO )</h2><blockquote>
-<p>SpringBoot3.x 整合各种工具的实现 demo</p>
-</blockquote>
-<details>
-<summary>点击查看合集</summary>  
-
-<ul>
-<li><a href="http://lishijie-me.github.io/springboot-demo-01/">SpringBoot项目创建启动</a></details></li>
-</ul>
-<br/>
-
-<h2 id="Spring-源码悦读-TODO"><a href="#Spring-源码悦读-TODO" class="headerlink" title="Spring 源码悦读( TODO )"></a><code>Spring</code> 源码悦读( TODO )</h2><blockquote>
-<p>这里如无特殊说明，源码均来自于 <code>Spring-6.x</code></p>
-</blockquote>
-<details>
-<summary>点击查看合集</summary>  
-
-<ul>
-<li><a href="http://lishijie-me.github.io/spring-source-01/">Spring6源码悦读-bean</a></details></li>
-</ul>
-<br/>
-
-<h2 id="JDK-源码悦读-TODO"><a href="#JDK-源码悦读-TODO" class="headerlink" title="JDK 源码悦读( TODO )"></a><code>JDK</code> 源码悦读( TODO )</h2><blockquote>
-<p>这里如无特殊说明，源码均来自于 <code>JDK-21.0.2</code></p>
-</blockquote>
-<details>
-<summary>点击查看合集</summary>  
-
-<ul>
-<li><a href="http://lishijie-me.github.io/jdk-source-01/">JDK21源码悦读-集合 List</a></details></li>
-</ul>
-<br/>
-
-<h2 id="读书笔记-TODO"><a href="#读书笔记-TODO" class="headerlink" title="读书笔记( TODO )"></a>读书笔记( TODO )</h2><blockquote>
-<p>多读书，多看报，少吃零食，多运动</p>
-</blockquote>
-<details>
-<summary>点击查看合集</summary>  
-
-<ul>
-<li><a href="http://lishijie-me.github.io/reading-book-01/">《鸟哥的 <code>Linux</code> 私房菜》悦读笔记</a></details></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
 
 
 
