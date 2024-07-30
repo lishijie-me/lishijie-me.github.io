@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>jdk源码悦读笔记(一)集合框架概述</title>
+    <url>/jdk-source-01/</url>
+    <content><![CDATA[<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>jdk源码悦读</category>
+      </categories>
+      <tags>
+        <tag>jdk</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CentOS9服务器搭建-远程连接被拒绝问题解决</title>
     <url>/linux-server-01/</url>
     <content><![CDATA[<span id="more"></span>
@@ -36,19 +49,6 @@
       </categories>
       <tags>
         <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>jdk源码悦读笔记(一)集合框架概述</title>
-    <url>/jdk-source-01/</url>
-    <content><![CDATA[<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>jdk源码悦读</category>
-      </categories>
-      <tags>
-        <tag>jdk</tag>
       </tags>
   </entry>
   <entry>
@@ -146,32 +146,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Spring源码悦读笔记(一)框架</title>
-    <url>/spring-source-01/</url>
-    <content><![CDATA[<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>Spring源码悦读</category>
-      </categories>
-      <tags>
-        <tag>Spring6</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>《鸟哥的 `Linux` 私房菜》悦读笔记</title>
-    <url>/reading-book-01/</url>
-    <content><![CDATA[<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>读书悦读笔记</category>
-      </categories>
-      <tags>
-        <tag>reading</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CentOS9 Redis7安装</title>
     <url>/linux-server-04/</url>
     <content><![CDATA[<span id="more"></span>
@@ -224,16 +198,16 @@
       </tags>
   </entry>
   <entry>
-    <title>SpringBoot学习笔记(一)初识SpringBoot与框架整合</title>
-    <url>/springboot-demo-01/</url>
+    <title>《鸟哥的 `Linux` 私房菜》悦读笔记</title>
+    <url>/reading-book-01/</url>
     <content><![CDATA[<span id="more"></span>
 
 ]]></content>
       <categories>
-        <category>SpringBoot学习笔记</category>
+        <category>读书悦读笔记</category>
       </categories>
       <tags>
-        <tag>springboot3</tag>
+        <tag>reading</tag>
       </tags>
   </entry>
   <entry>
@@ -309,6 +283,35 @@
       </tags>
   </entry>
   <entry>
+    <title>Spring源码悦读笔记(一)框架</title>
+    <url>/spring-source-01/</url>
+    <content><![CDATA[<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>Spring源码悦读</category>
+      </categories>
+      <tags>
+        <tag>Spring6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SpringBoot整合笔记(一)初识SpringBoot与框架整合</title>
+    <url>/springboot-demo-01/</url>
+    <content><![CDATA[<span id="more"></span>
+
+<h2 id="写在开头"><a href="#写在开头" class="headerlink" title="写在开头"></a>写在开头</h2><blockquote>
+<p>整合笔记，顾名思义就是基于 <code>SpringBoot</code> 整合各种工具然后实现一些功能。<br/><br>这里整合过程中，我们会尽可能的使用各种工具的最新版本</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>SpringBoot整合笔记</category>
+      </categories>
+      <tags>
+        <tag>springboot3</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我的笔记合集</title>
     <url>/todo/</url>
     <content><![CDATA[<h2 id="CentOS9-服务器搭建"><a href="#CentOS9-服务器搭建" class="headerlink" title="CentOS9 服务器搭建"></a>CentOS9 服务器搭建</h2><details>
@@ -329,14 +332,14 @@
 </ul>
 <br/>
 
-<h2 id="SpringBoot-整合实战-TODO"><a href="#SpringBoot-整合实战-TODO" class="headerlink" title="SpringBoot 整合实战( TODO )"></a><code>SpringBoot</code> 整合实战( TODO )</h2><blockquote>
+<h2 id="SpringBoot-整合笔记-TODO"><a href="#SpringBoot-整合笔记-TODO" class="headerlink" title="SpringBoot 整合笔记( TODO )"></a><code>SpringBoot</code> 整合笔记( TODO )</h2><blockquote>
 <p>SpringBoot3.x 整合各种工具的实现 demo</p>
 </blockquote>
 <details>
 <summary>点击查看合集</summary>  
 
 <ul>
-<li><a href="http://lishijie-me.github.io/springboot-demo-01/">SpringBoot项目创建启动</a></details></li>
+<li><a href="http://lishijie-me.github.io/springboot-demo-01/">SpringBoot整合笔记（一）初识SpringBoot与框架整合</a></details></li>
 </ul>
 <br/>
 
