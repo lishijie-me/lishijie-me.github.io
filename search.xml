@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>学习JavaScript-01：JavaScript基本概念</title>
+    <url>/2024/10/11/learing-javascript-01/</url>
+    <content><![CDATA[<p>
+<img src="https://wallpaperm.cmcm.com/edb3e49a6e802c6bc79809489a9f212b.jpg" align="left" width="400">
+</p><br><br><br><br><br><br><br><br><br>
+
+
+
+<blockquote>
+<p>声明：这是我的学习总结，从网上学来的；比如 B站等等，感谢所有视频教程的作者。</p>
+</blockquote>
+<h2 id="JavaScript-是什么？"><a href="#JavaScript-是什么？" class="headerlink" title="JavaScript 是什么？"></a>JavaScript 是什么？</h2><p>是一种运行在客户端（浏览器）上的编程语言，实现人机交互效果</p>
+<h2 id="有什么作用？"><a href="#有什么作用？" class="headerlink" title="有什么作用？"></a>有什么作用？</h2><ul>
+<li>网页特效（监听用户的一些行为让网页做出对应的反馈）</li>
+<li>表单验证（针对表单数据的合法性进行判断）</li>
+<li>数据交互（获取后台的数据，渲染到前端）</li>
+<li>服务端编程（nodejs）</li>
+</ul>
+<h2 id="是由什么组成的？"><a href="#是由什么组成的？" class="headerlink" title="是由什么组成的？"></a>是由什么组成的？</h2><ul>
+<li>ECMAScript 语法规范<ul>
+<li>规定了 JS 基础语法核心知识。如：变量、分支语句、循环语句、对象等</li>
+</ul>
+</li>
+<li>Web APIs<ul>
+<li>DOM 页面文档对象模型：操作文档，比如对也买你元素进行移动、大小、添加删除等操作</li>
+<li>BOM 浏览器对象模型：操作浏览器，比如页面弹窗、检测窗口宽度、存储数据到浏览器等等</li>
+</ul>
+</li>
+</ul>
+<img src="/2024/10/11/learing-javascript-01/image-20241011231610221.png" alt="JS的组成" style="zoom:50%;">
+
+
+
+<h2 id="JavaScript-学习权威网站"><a href="#JavaScript-学习权威网站" class="headerlink" title="JavaScript 学习权威网站"></a>JavaScript 学习权威网站</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript">JavaScript 权威网站</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">java space sdsfd</span><br><span class="line">sdfsdfs sdsfdsf sdfsf</span><br><span class="line">sdsdvvv</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我的未来在何方？</title>
+    <url>/2024/10/09/where-is-furture/</url>
+    <content><![CDATA[<h2 id="职业生涯即将结束"><a href="#职业生涯即将结束" class="headerlink" title="职业生涯即将结束"></a>职业生涯即将结束</h2><p>啊实打实</p>
+<h2 id="未来在哪"><a href="#未来在哪" class="headerlink" title="未来在哪"></a>未来在哪</h2><p>1232</p>
+<p>
+<img src="https://wallpaperm.cmcm.com/edb3e49a6e802c6bc79809489a9f212b.jpg" align="left" width="400">
+</p>]]></content>
+      <tags>
+        <tag>个人</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>学习JavaScript-02：JavaScript基本概念</title>
+    <url>/2024/10/12/learing-javascript-02/</url>
+    <content><![CDATA[<p>
+<img src="https://wallpaperm.cmcm.com/edb3e49a6e802c6bc79809489a9f212b.jpg" align="left" width="400">
+</p><br><br><br><br><br><br><br><br><br>
+
+
+
+<blockquote>
+<p>声明：这是我的学习总结，从网上学来的；比如 B站等等，感谢所有视频教程的作者。</p>
+</blockquote>
+<h2 id="JavaScript-是什么？"><a href="#JavaScript-是什么？" class="headerlink" title="JavaScript 是什么？"></a>JavaScript 是什么？</h2><p>是一种运行在客户端（浏览器）上的编程语言，实现人机交互效果</p>
+<h2 id="有什么作用？"><a href="#有什么作用？" class="headerlink" title="有什么作用？"></a>有什么作用？</h2><ul>
+<li>网页特效（监听用户的一些行为让网页做出对应的反馈）</li>
+<li>表单验证（针对表单数据的合法性进行判断）</li>
+<li>数据交互（获取后台的数据，渲染到前端）</li>
+<li>服务端编程（nodejs）</li>
+</ul>
+<h2 id="是由什么组成的？"><a href="#是由什么组成的？" class="headerlink" title="是由什么组成的？"></a>是由什么组成的？</h2><ul>
+<li>ECMAScript 语法规范<ul>
+<li>规定了 JS 基础语法核心知识。如：变量、分支语句、循环语句、对象等</li>
+</ul>
+</li>
+<li>Web APIs<ul>
+<li>DOM 页面文档对象模型：操作文档，比如对也买你元素进行移动、大小、添加删除等操作</li>
+<li>BOM 浏览器对象模型：操作浏览器，比如页面弹窗、检测窗口宽度、存储数据到浏览器等等</li>
+</ul>
+</li>
+</ul>
+<img src="/2024/10/12/learing-javascript-02/image-20241011231610221.png" alt="JS的组成" style="zoom:50%;">
+
+
+
+<h2 id="JavaScript-学习权威网站"><a href="#JavaScript-学习权威网站" class="headerlink" title="JavaScript 学习权威网站"></a>JavaScript 学习权威网站</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript">JavaScript 权威网站</a></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+</search>
