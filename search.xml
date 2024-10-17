@@ -36,6 +36,24 @@
       </tags>
   </entry>
   <entry>
+    <title>常用的SQL知识汇总：以MySQL为例</title>
+    <url>/2024/10/17/sql/</url>
+    <content><![CDATA[<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><ul>
+<li>coalesce 用法 和示例</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 用法</span><br><span class="line">- 将空值替换成指定值</span><br><span class="line">- 返回第一个非空值</span><br><span class="line"></span><br><span class="line"># 示例 1</span><br><span class="line">select coalesce(success_cnt, 1) from tableA</span><br><span class="line">当success_cnt 为null值的时候，将返回1，否则将返回success_cnt的真实值。</span><br><span class="line"></span><br><span class="line"># 示例 2</span><br><span class="line">select coalesce(success_cnt,period,1) from tableA</span><br><span class="line">当success_cnt不为null，那么无论period是否为null，都将返回success_cnt的真实值（因为success_cnt是第一个参数），当success_cnt为null，而period不为null的时候，返回period的真实值。只有当success_cnt和period均为null的时候，将返回1。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>SQL</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>学习JavaScript-01：JavaScript基本概念</title>
     <url>/2024/10/11/learing-javascript-01/</url>
     <content><![CDATA[<p>
