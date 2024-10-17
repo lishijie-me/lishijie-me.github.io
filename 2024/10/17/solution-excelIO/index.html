@@ -19,23 +19,31 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"lishijie-me.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.21.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="lishijie &#39;s Blog">
-<meta property="og:url" content="https://lishijie-me.github.io/tags/%E4%B8%AA%E4%BA%BA/index.html">
+    <meta name="description" content="Excel大数据量导入导出，在项目中难免遇到，今天我想写下我们遇到的百万级数据导入导出">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Excel大数据量导入导出">
+<meta property="og:url" content="https://lishijie-me.github.io/2024/10/17/solution-excelIO/index.html">
 <meta property="og:site_name" content="lishijie &#39;s Blog">
+<meta property="og:description" content="Excel大数据量导入导出，在项目中难免遇到，今天我想写下我们遇到的百万级数据导入导出">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://lishijie-me.github.io/2024/10/17/solution-excelIO/image-20241017215607689.png">
+<meta property="article:published_time" content="2024-10-17T13:53:00.000Z">
+<meta property="article:modified_time" content="2024-10-17T13:59:01.417Z">
 <meta property="article:author" content="lishijie">
+<meta property="article:tag" content="Solution">
+<meta property="article:tag" content="Excel">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lishijie-me.github.io/2024/10/17/solution-excelIO/image-20241017215607689.png">
 
 
-<link rel="canonical" href="https://lishijie-me.github.io/tags/%E4%B8%AA%E4%BA%BA/">
+<link rel="canonical" href="https://lishijie-me.github.io/2024/10/17/solution-excelIO/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"tags/个人/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lishijie-me.github.io/2024/10/17/solution-excelIO/","path":"2024/10/17/solution-excelIO/","title":"Excel大数据量导入导出"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>标签: 个人 | lishijie 's Blog</title>
+<title>Excel大数据量导入导出 | lishijie 's Blog</title>
   
 
 
@@ -122,7 +130,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -135,6 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%AE%9E%E8%B7%B5"><span class="nav-number">2.</span> <span class="nav-text">简单实践</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90"><span class="nav-number">3.</span> <span class="nav-text">问题分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%A0%E7%A7%8D%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="nav-number">4.</span> <span class="nav-text">几种解决方案的介绍</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -179,50 +188,110 @@
 
     </div>
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">个人
-          <small>标签</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lishijie-me.github.io/2024/10/17/solution-excelIO/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lishijie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lishijie 's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Excel大数据量导入导出 | lishijie 's Blog">
+      <meta itemprop="description" content="Excel大数据量导入导出，在项目中难免遇到，今天我想写下我们遇到的百万级数据导入导出">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Excel大数据量导入导出
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2024</span>
+
+      <time title="创建时间：2024-10-17 21:53:00 / 修改时间：21:59:01" itemprop="dateCreated datePublished" datetime="2024-10-17T21:53:00+08:00">2024-10-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AE%9E%E8%B7%B5/" itemprop="url" rel="index"><span itemprop="name">实践</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">Excel大数据量导入导出，在项目中难免遇到，今天我想写下我们遇到的百万级数据导入导出</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><img src="/2024/10/17/solution-excelIO/image-20241017215607689.png" alt="image-20241017215607689" style="zoom:50%;">
+
+
+
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><h2 id="简单实践"><a href="#简单实践" class="headerlink" title="简单实践"></a>简单实践</h2><h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><h2 id="几种解决方案的介绍"><a href="#几种解决方案的介绍" class="headerlink" title="几种解决方案的介绍"></a>几种解决方案的介绍</h2>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2024-10-09T21:27:33+08:00"
-              content="2024-10-09">
-          10-09
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/10/09/where-is-furture/" itemprop="url">
-            <span itemprop="name">我的未来在何方？</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Solution/" rel="tag"># Solution</a>
+              <a href="/tags/Excel/" rel="tag"># Excel</a>
+          </div>
 
-      
-    </header>
-  </article>
-
-    </div>
+        
+  <div class="social-like a2a_kit a2a_kit_size_32 a2a_default_style">
+    <a class="a2a_dd" target="_blank" rel="noopener" href="https://www.addtoany.com/share"></a>
+      <a class="a2a_button_wechat"></a>
+      <a class="a2a_button_twitter"></a>
   </div>
-  
-  
-  
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/10/12/learing-javascript-02/" rel="prev" title="学习JavaScript-02：JavaScript基本概念">
+                  <i class="fa fa-angle-left"></i> 学习JavaScript-02：JavaScript基本概念
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
 
 </div>
   </main>

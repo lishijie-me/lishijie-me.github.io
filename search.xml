@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Excel大数据量导入导出</title>
+    <url>/2024/10/17/solution-excelIO/</url>
+    <content><![CDATA[<img src="/2024/10/17/solution-excelIO/image-20241017215607689.png" alt="image-20241017215607689" style="zoom:50%;">
+
+
+
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><h2 id="简单实践"><a href="#简单实践" class="headerlink" title="简单实践"></a>简单实践</h2><h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><h2 id="几种解决方案的介绍"><a href="#几种解决方案的介绍" class="headerlink" title="几种解决方案的介绍"></a>几种解决方案的介绍</h2>]]></content>
+      <categories>
+        <category>实践</category>
+      </categories>
+      <tags>
+        <tag>Solution</tag>
+        <tag>Excel</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>学习JavaScript-01：JavaScript基本概念</title>
     <url>/2024/10/11/learing-javascript-01/</url>
     <content><![CDATA[<p>
