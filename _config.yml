@@ -32,6 +32,7 @@ theme: minima
 # theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-feed
+  - jekyll-toc
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -52,3 +53,11 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+permalink: /:categories/:year/:y_day/:title
+
+# 默认为所有文章启用 toc
+# defaults:
+#   - scope:
+#       path: ""
+#     values:
+#       toc: true
