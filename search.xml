@@ -23,29 +23,6 @@
       </tags>
   </entry>
   <entry>
-    <title>springboot 启动过程分析</title>
-    <url>/2025/01/09/spring-boot-01/</url>
-    <content><![CDATA[<p>w</p>
-<p>源码</p>
-]]></content>
-      <categories>
-        <category>springbootcat</category>
-      </categories>
-      <tags>
-        <tag>springbo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>spring-02</title>
-    <url>/2025/01/07/spring-02/</url>
-    <content><![CDATA[]]></content>
-      <tags>
-        <tag>Fx</tag>
-        <tag>Solution</tag>
-        <tag>SQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>spring 6 源码学习笔记-阅读环境搭建</title>
     <url>/2025/01/01/spring-01/</url>
     <content><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><blockquote>
