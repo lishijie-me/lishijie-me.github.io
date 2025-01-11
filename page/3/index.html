@@ -147,7 +147,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -158,7 +158,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -189,7 +189,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lishijie-me.github.io/2024/12/29/fx-quartz/">
+    <link itemprop="mainEntityOfPage" href="https://lishijie-me.github.io/2025/01/01/spring-01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -207,7 +207,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/12/29/fx-quartz/" class="post-title-link" itemprop="url">Quartz的学习和应用</a>
+          <a href="/2025/01/01/spring-01/" class="post-title-link" itemprop="url">spring 6 源码学习笔记-阅读环境搭建</a>
         </h2>
 
         <div class="post-meta-container">
@@ -217,9 +217,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2024-12-29 08:00:00 / 修改时间：15:30:17" itemprop="dateCreated datePublished" datetime="2024-12-29T08:00:00+08:00">2024-12-29</time>
+      <time title="创建时间：2025-01-01 18:28:06" itemprop="dateCreated datePublished" datetime="2025-01-01T18:28:06+08:00">2025-01-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-01-02 23:28:02" itemprop="dateModified" datetime="2025-01-02T23:28:02+08:00">2025-01-02</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -227,7 +233,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Fx/" itemprop="url" rel="index"><span itemprop="name">Fx</span></a>
+          <a href="/categories/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a>
         </span>
     </span>
 
@@ -241,7 +247,111 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><h2 id="基本应用"><a href="#基本应用" class="headerlink" title="基本应用"></a>基本应用</h2><h2 id="具体原理"><a href="#具体原理" class="headerlink" title="具体原理"></a>具体原理</h2><h2 id="方案缺陷和优化"><a href="#方案缺陷和优化" class="headerlink" title="方案缺陷和优化"></a>方案缺陷和优化</h2>
+          <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><blockquote>
+<p>为什么要有这一篇文章</p>
+</blockquote>
+<p>Spring 框架已经成为了 Java 开发的事实标准，生产中避免不了要跟 Spring 打交道，俗话说：知己知彼，百战不殆。想要把事情做好，那必须要好好的了解下。</p>
+<p>那我们首先想到的就是去看看 Spring 的源码是咋写的。今天咱们就一起搭建下 Spring 的源码阅读环境</p>
+<h2 id="本文总览"><a href="#本文总览" class="headerlink" title="本文总览"></a>本文总览</h2><p><img src="/images/spring-01/image-20250102225831368.png" alt="image-20250102225831368"></p>
+<h2 id="Fork-源码"><a href="#Fork-源码" class="headerlink" title="Fork 源码"></a>Fork 源码</h2><p>使用 github 将源码 Fork自己的账号，方便后续管理测试代码。当然，还有一个目的就是 防止在编译过程中报错</p>
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><blockquote>
+<p>JDK ：17.0.13</p>
+<p>Geadle：8.9</p>
+<p>Spring：6.0.x</p>
+<ul>
+<li>为什么选这个版本？6.1和6.2我都试过，编译会出奇怪的依赖错误，估计是其他工具的依赖还没调好</li>
+</ul>
+<p>IDEA：2024.2.1</p>
+<p>Win10（i7-13700kf）</p>
+</blockquote>
+<h3 id="JDK-安装"><a href="#JDK-安装" class="headerlink" title="JDK 安装"></a>JDK 安装</h3><p>下载好之后，放到喜欢的目录，然后在环境变量中配置</p>
+<ul>
+<li>新建 <code>JAVA_HOME</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME</span><br><span class="line">C:\Soft\Java\java-17</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>编辑 <code>Path</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在 Path 中新增配置 </span><br><span class="line">%JAVA_HOME%\bin</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>新增 <code>CLASSPATH</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CLASSPATH</span><br><span class="line">.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>验证</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Dos命令窗口中使用命令 java -version 打印版本信息，出现如下信息 表示配置成功</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/spring-01/image-20250102225720499.png" alt="image-20250102225720499"></p>
+<h3 id="Gradle-安装配置"><a href="#Gradle-安装配置" class="headerlink" title="Gradle 安装配置"></a>Gradle 安装配置</h3><p>下载好之后，放到喜欢的目录，然后在环境变量中配置</p>
+<ul>
+<li>新建 <code>GRADLE_HOME</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GRADLE_HOME</span><br><span class="line">C:\Program Files\gradle</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>编辑 <code>Path</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在 Path 中新增配置 </span><br><span class="line">%GRADLE_HOME%\bin</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>新建 <code>GRADLE_USER_HOME</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GRADLE_USER_HOME</span><br><span class="line">C:\Program Files\gradle\repository</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>验证</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Dos命令窗口中使用命令 gradle -V 打印版本信息，出现如下信息 表示配置成功</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/spring-01/image-20250102192820519.png" alt="image-20250102192820519"></p>
+<h3 id="Gradle-在-IDEA-中的配置"><a href="#Gradle-在-IDEA-中的配置" class="headerlink" title="Gradle 在 IDEA 中的配置"></a>Gradle 在 IDEA 中的配置</h3><p>先打开IDEA查看 Gradle 配置，选择本地安装的 Gradle，防止源码在编译过程中，再次下载gradle</p>
+<p><img src="/images/spring-01/image-20250102192930338.png" alt="image-20250102192930338"></p>
+<h3 id="下载代码到本地"><a href="#下载代码到本地" class="headerlink" title="下载代码到本地"></a>下载代码到本地</h3><p> 使用 git bash 窗口，把上面 Fork 的 源码 克隆到本地，切换分支到 6.0.x</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">## 克隆代码</span><br><span class="line">git clone https://github.com/lishijie-me/spring-framework.git</span><br><span class="line">## 切换分支</span><br><span class="line">git checkout 6.0.x</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="编译源码"><a href="#编译源码" class="headerlink" title="编译源码"></a>编译源码</h2><p>使用 IDEA 打开本地的 spring 源码，等待编译完成</p>
+<p>整个过程比较久，实测下来得 30mins+，可以喝杯茶再回来，出现下图就是编译完成了</p>
+<p><img src="/images/spring-01/image-20250102190447792.png" alt="image-20250102190447792"></p>
+<h2 id="新增测试模块"><a href="#新增测试模块" class="headerlink" title="新增测试模块"></a>新增测试模块</h2><h3 id="新增模块"><a href="#新增模块" class="headerlink" title="新增模块"></a>新增模块</h3><p>使用 IDEA 新增模块：除了标题自定义，其他的都选默认的就行</p>
+<p><img src="/images/spring-01/image-20250102212339610.png" alt="image-20250102212339610"></p>
+<blockquote>
+<p>build.gradle 文件，新增spring-context模块依赖，该模块包含了spring-core和spring-bean 、IOC容器等Spring 运行时上下文依赖内容</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">plugins &#123;</span><br><span class="line">    id <span class="string">&#x27;java&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">group = <span class="string">&#x27;org.springframework&#x27;</span></span><br><span class="line">version = <span class="string">&#x27;6.0.23-SNAPSHOT&#x27;</span></span><br><span class="line"></span><br><span class="line">repositories &#123;</span><br><span class="line">    mavenCentral()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">    api(project(<span class="string">&quot;:spring-context&quot;</span>))  <span class="comment">// 只新增这一行，其余代码都是默认的</span></span><br><span class="line">    testImplementation <span class="title function_">platform</span><span class="params">(<span class="string">&#x27;org.junit:junit-bom:5.10.0&#x27;</span>)</span></span><br><span class="line">    testImplementation <span class="string">&#x27;org.junit.jupiter:junit-jupiter&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test &#123;</span><br><span class="line">    useJUnitPlatform()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>项目根目录的 settings.gradle 文件会新增 一句</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">include &#x27;spring-simple&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>编译完成如下</p>
+</blockquote>
+<p><img src="/images/spring-01/image-20250102213221257.png" alt="image-20250102213221257"></p>
+<h3 id="编码验证"><a href="#编码验证" class="headerlink" title="编码验证"></a>编码验证</h3><h4 id="创建接口"><a href="#创建接口" class="headerlink" title="创建接口"></a>创建接口</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.money.spring.simple;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.AnnotationConfigApplicationContext;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.ComponentScan;</span><br><span class="line"><span class="keyword">import</span> org.money.spring.simple.service.IAnimalService;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 成行（lishijie-me）</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2025/1/2 星期四 21:46:36</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span> SpringSimpleApplication</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@ComponentScan(&quot;org.money.spring.simple.**&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SpringSimpleApplication</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="type">AnnotationConfigApplicationContext</span> <span class="variable">context</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AnnotationConfigApplicationContext</span>(SpringSimpleApplication.class);</span><br><span class="line">		<span class="type">IAnimalService</span> <span class="variable">animalService</span> <span class="operator">=</span> context.getBean(IAnimalService.class);</span><br><span class="line">		animalService.sport();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="创建实现类"><a href="#创建实现类" class="headerlink" title="创建实现类"></a>创建实现类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.money.spring.simple.service.impl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Primary;</span><br><span class="line"><span class="keyword">import</span> org.money.spring.simple.service.IAnimalService;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 成行（lishijie-me）</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2025/1/2 星期四 21:42:56</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span> BirdService</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="meta">@Primary</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BirdService</span> <span class="keyword">implements</span> <span class="title class_">IAnimalService</span> &#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">sport</span><span class="params">()</span> &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;I can fly !!!&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.money.spring.simple.service.impl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.money.spring.simple.service.IAnimalService;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 成行（lishijie-me）</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2025/1/2 星期四 21:44:03</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span> FishService</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FishService</span> <span class="keyword">implements</span> <span class="title class_">IAnimalService</span> &#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">sport</span><span class="params">()</span> &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;I can swimming !!!&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="创建启动类"><a href="#创建启动类" class="headerlink" title="创建启动类"></a>创建启动类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.money.spring.simple;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.AnnotationConfigApplicationContext;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.ComponentScan;</span><br><span class="line"><span class="keyword">import</span> org.money.spring.simple.service.IAnimalService;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 成行（lishijie-me）</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2025/1/2 星期四 21:46:36</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span> SpringSimpleApplication</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@ComponentScan(&quot;org.money.spring.simple.**&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SpringSimpleApplication</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="type">AnnotationConfigApplicationContext</span> <span class="variable">context</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AnnotationConfigApplicationContext</span>(SpringSimpleApplication.class);</span><br><span class="line">		<span class="type">IAnimalService</span> <span class="variable">animalService</span> <span class="operator">=</span> context.getBean(IAnimalService.class);</span><br><span class="line">		animalService.sport();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="启动验证"><a href="#启动验证" class="headerlink" title="启动验证"></a>启动验证</h4><p>出现下图即表示验证成功</p>
+<p><img src="/images/spring-01/image-20250102225056421.png" alt="image-20250102225056421"></p>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>后续如无特殊说明，都是基于 6.0.x 进行的测试</p>
+<p>在最后一步验证启动之前，使用 JDK-21 都可以成功，但是一旦启动，就会直接报不兼容，无奈只能把 JDK 版本回退到 17.0.13</p>
+<p>开始源码阅读，go！</p>
+
       
     </div>
 
@@ -260,7 +370,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>
