@@ -56,7 +56,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Java进阶-JVM进阶</title>
+    <title>JVM进阶01-基础知识</title>
     <url>/2025/01/11/java-upgrade-101/</url>
     <content><![CDATA[<h2 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h2><p>编程语言有很多种，高级语言、汇编语言、机器语言，分类有多个标准</p>
 <ul>
@@ -75,6 +75,11 @@
 <li>二进制跨平台</li>
 </ul>
 <p><img src="/images/java-upgrade-101/image-20250114211620527.png" alt="image-20250114211620527"></p>
+<h2 id="Java、C-、Rust-的区别"><a href="#Java、C-、Rust-的区别" class="headerlink" title="Java、C++、Rust 的区别"></a>Java、C++、Rust 的区别</h2><ul>
+<li>C&#x2F;C++ 完全相信而且惯着程序员，让大家自行管理内存，可以编写很自由的代码，但一不小心就会造成内存泄漏等问题，导致程序崩溃。</li>
+<li>Java&#x2F;Golang 完全不相信程序员，但也惯着程序员。所有的内存生命周期都由 JVM 运行时统一管理。在绝大部分场景下，你可以非常自由的写代码，而且不用关心内存到底是什么情况。 内存使用有问题的时候，我们可以通过 JM 来进行信息相关的分析诊断和调整。这也是本课程的目标。</li>
+<li>Rust 语言选择既不相信程序员，也不惯着程序员。让你在写代码的时候，必须清楚明白的用 Rust 的规则管理好你的变量，好让机器能明白高效地分析和管理内存。 但是这样会导致代码不利于人的理解，写代码很不自由，学习成本也很高。</li>
+</ul>
 ]]></content>
       <tags>
         <tag>Fx</tag>
