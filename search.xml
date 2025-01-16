@@ -32,69 +32,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Quartz的学习和应用</title>
-    <url>/2024/12/29/fx-quartz/</url>
-    <content><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><h2 id="基本应用"><a href="#基本应用" class="headerlink" title="基本应用"></a>基本应用</h2><h2 id="具体原理"><a href="#具体原理" class="headerlink" title="具体原理"></a>具体原理</h2><h2 id="方案缺陷和优化"><a href="#方案缺陷和优化" class="headerlink" title="方案缺陷和优化"></a>方案缺陷和优化</h2>]]></content>
-      <categories>
-        <category>Fx</category>
-      </categories>
-      <tags>
-        <tag>Fx</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我做了啥？</title>
-    <url>/2025/01/02/myIndex/</url>
-    <content><![CDATA[<h2 id="我的笔记"><a href="#我的笔记" class="headerlink" title="我的笔记"></a>我的笔记</h2><ul>
-<li>一行征雁向南飞，两只烤鸭往北走（为什么我能发视频，哈哈）</li>
-<li>这是个简单的首页，以后再分分类吧，都是些学习笔记啥的；</li>
-<li>零散记录，有兴趣的就往后翻几页（如果你还愿意读到这句）</li>
-</ul>
-<h2 id="我读的书"><a href="#我读的书" class="headerlink" title="我读的书"></a>我读的书</h2><ul>
-<li>是的，书在吃灰，还没读</li>
-</ul>
-<h2 id="人生在世，做几件事？"><a href="#人生在世，做几件事？" class="headerlink" title="人生在世，做几件事？"></a>人生在世，做几件事？</h2><ul>
-<li><p><input disabled="" type="checkbox"> 
-学习</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-赚钱</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-锻炼身体</p>
-</li>
-</ul>
-<p>没了（这是个双关）</p>
-]]></content>
-      <categories>
-        <category>myIndex</category>
-      </categories>
-      <tags>
-        <tag>myIndex</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JVM 进阶02-工具与 GC 策略</title>
-    <url>/2025/01/15/java-upgrade-102/</url>
-    <content><![CDATA[<h2 id="JDK-内置命令行工具"><a href="#JDK-内置命令行工具" class="headerlink" title="JDK 内置命令行工具"></a>JDK 内置命令行工具</h2><h2 id="JDK-内置图形化工具"><a href="#JDK-内置图形化工具" class="headerlink" title="JDK 内置图形化工具"></a>JDK 内置图形化工具</h2><h2 id="GC-的背景与一般原理"><a href="#GC-的背景与一般原理" class="headerlink" title="GC 的背景与一般原理"></a>GC 的背景与一般原理</h2><h2 id="串行-GC-并行-GC-（Serial-GC-Parallel-GC）"><a href="#串行-GC-并行-GC-（Serial-GC-Parallel-GC）" class="headerlink" title="串行 GC&#x2F; 并行 GC （Serial GC &#x2F; Parallel GC）"></a>串行 GC&#x2F; 并行 GC （Serial GC &#x2F; Parallel GC）</h2><h2 id="CMS-GC-G1-GC"><a href="#CMS-GC-G1-GC" class="headerlink" title="CMS GC &#x2F; G1 GC"></a>CMS GC &#x2F; G1 GC</h2><h2 id="ZGC-Shenandoah-GC"><a href="#ZGC-Shenandoah-GC" class="headerlink" title="ZGC &#x2F; Shenandoah GC"></a>ZGC &#x2F; Shenandoah GC</h2><h2 id="总结回顾与作业实践"><a href="#总结回顾与作业实践" class="headerlink" title="总结回顾与作业实践"></a>总结回顾与作业实践</h2>]]></content>
-      <tags>
-        <tag>JavaUpgrade</tag>
-        <tag>JVM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>阅读《选集101-中国社会各阶级的分析》</title>
-    <url>/2025/01/15/read-mao-101/</url>
-    <content><![CDATA[<blockquote>
-<p> 原文成文时间：1925年12月1日</p>
-</blockquote>
-<p>《选集》</p>
-]]></content>
-      <tags>
-        <tag>Mao</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JVM进阶01-基础知识</title>
     <url>/2025/01/14/java-upgrade-101/</url>
     <content><![CDATA[<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h3 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h3><p>编程语言有很多种，高级语言、汇编语言、机器语言，分类有多个标准</p>
@@ -342,6 +279,90 @@
       </tags>
   </entry>
   <entry>
+    <title>Quartz的学习和应用</title>
+    <url>/2024/12/29/fx-quartz/</url>
+    <content><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><h2 id="基本应用"><a href="#基本应用" class="headerlink" title="基本应用"></a>基本应用</h2><h2 id="具体原理"><a href="#具体原理" class="headerlink" title="具体原理"></a>具体原理</h2><h2 id="方案缺陷和优化"><a href="#方案缺陷和优化" class="headerlink" title="方案缺陷和优化"></a>方案缺陷和优化</h2>]]></content>
+      <categories>
+        <category>Fx</category>
+      </categories>
+      <tags>
+        <tag>Fx</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>read-mao-000</title>
+    <url>/2025/01/15/read-mao-000/</url>
+    <content><![CDATA[<blockquote>
+<p>教员留下了大量的书籍，这些都是我们成长过程中需要认真学习的十分宝贵的资源</p>
+</blockquote>
+<p>本篇主要梳理教员的著作及相关著作，主要包括</p>
+<ul>
+<li><p>《选集1-5卷》</p>
+</li>
+<li><p>《诗词》</p>
+</li>
+<li><p>《传记》</p>
+</li>
+<li></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Mao</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JVM 进阶02-工具与 GC 策略</title>
+    <url>/2025/01/15/java-upgrade-102/</url>
+    <content><![CDATA[<h2 id="JDK-内置命令行工具"><a href="#JDK-内置命令行工具" class="headerlink" title="JDK 内置命令行工具"></a>JDK 内置命令行工具</h2><h2 id="JDK-内置图形化工具"><a href="#JDK-内置图形化工具" class="headerlink" title="JDK 内置图形化工具"></a>JDK 内置图形化工具</h2><h2 id="GC-的背景与一般原理"><a href="#GC-的背景与一般原理" class="headerlink" title="GC 的背景与一般原理"></a>GC 的背景与一般原理</h2><h2 id="串行-GC-并行-GC-（Serial-GC-Parallel-GC）"><a href="#串行-GC-并行-GC-（Serial-GC-Parallel-GC）" class="headerlink" title="串行 GC&#x2F; 并行 GC （Serial GC &#x2F; Parallel GC）"></a>串行 GC&#x2F; 并行 GC （Serial GC &#x2F; Parallel GC）</h2><h2 id="CMS-GC-G1-GC"><a href="#CMS-GC-G1-GC" class="headerlink" title="CMS GC &#x2F; G1 GC"></a>CMS GC &#x2F; G1 GC</h2><h2 id="ZGC-Shenandoah-GC"><a href="#ZGC-Shenandoah-GC" class="headerlink" title="ZGC &#x2F; Shenandoah GC"></a>ZGC &#x2F; Shenandoah GC</h2><h2 id="总结回顾与作业实践"><a href="#总结回顾与作业实践" class="headerlink" title="总结回顾与作业实践"></a>总结回顾与作业实践</h2>]]></content>
+      <tags>
+        <tag>JavaUpgrade</tag>
+        <tag>JVM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我做了啥？</title>
+    <url>/2025/01/02/myIndex/</url>
+    <content><![CDATA[<h2 id="我的笔记"><a href="#我的笔记" class="headerlink" title="我的笔记"></a>我的笔记</h2><ul>
+<li>一行征雁向南飞，两只烤鸭往北走（为什么我能发视频，哈哈）</li>
+<li>这是个简单的首页，以后再分分类吧，都是些学习笔记啥的；</li>
+<li>零散记录，有兴趣的就往后翻几页（如果你还愿意读到这句）</li>
+</ul>
+<h2 id="我读的书"><a href="#我读的书" class="headerlink" title="我读的书"></a>我读的书</h2><ul>
+<li>是的，书在吃灰，还没读</li>
+</ul>
+<h2 id="人生在世，做几件事？"><a href="#人生在世，做几件事？" class="headerlink" title="人生在世，做几件事？"></a>人生在世，做几件事？</h2><ul>
+<li><p><input disabled="" type="checkbox"> 
+学习</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+赚钱</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+锻炼身体</p>
+</li>
+</ul>
+<p>没了（这是个双关）</p>
+]]></content>
+      <categories>
+        <category>myIndex</category>
+      </categories>
+      <tags>
+        <tag>myIndex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阅读《选集101-中国社会各阶级的分析》</title>
+    <url>/2025/01/15/read-mao-101/</url>
+    <content><![CDATA[<blockquote>
+<p> 原文成文时间：1925年12月1日</p>
+</blockquote>
+<p>《选集》</p>
+]]></content>
+      <tags>
+        <tag>Mao</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>spring 6 源码学习笔记-阅读环境搭建</title>
     <url>/2025/01/01/spring-01/</url>
     <content><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><blockquote>
@@ -454,27 +475,6 @@
       </categories>
       <tags>
         <tag>Spring源码阅读</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>read-mao-000</title>
-    <url>/2025/01/15/read-mao-000/</url>
-    <content><![CDATA[<blockquote>
-<p>教员留下了大量的书籍，这些都是我们成长过程中需要认真学习的十分宝贵的资源</p>
-</blockquote>
-<p>本篇主要梳理教员的著作及相关著作，主要包括</p>
-<ul>
-<li><p>《选集1-5卷》</p>
-</li>
-<li><p>《诗词》</p>
-</li>
-<li><p>《传记》</p>
-</li>
-<li></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>Mao</tag>
       </tags>
   </entry>
 </search>
