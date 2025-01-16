@@ -32,6 +32,39 @@
       </tags>
   </entry>
   <entry>
+    <title>read-mao-000</title>
+    <url>/2025/01/15/read-mao-000/</url>
+    <content><![CDATA[<blockquote>
+<p>教员留下了大量的书籍，这些都是我们成长过程中需要认真学习的十分宝贵的资源</p>
+</blockquote>
+<p>本篇主要梳理教员的著作及相关著作，主要包括</p>
+<ul>
+<li><p>《选集1-5卷》</p>
+</li>
+<li><p>《诗词》</p>
+</li>
+<li><p>《传记》</p>
+</li>
+<li></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Mao</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阅读《选集101-中国社会各阶级的分析》</title>
+    <url>/2025/01/15/read-mao-101/</url>
+    <content><![CDATA[<blockquote>
+<p> 原文成文时间：1925年12月1日</p>
+</blockquote>
+<p>《选集》</p>
+]]></content>
+      <tags>
+        <tag>Mao</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JVM 进阶02-工具与 GC 策略</title>
     <url>/2025/01/15/java-upgrade-102/</url>
     <content><![CDATA[<h2 id="JDK-内置命令行工具"><a href="#JDK-内置命令行工具" class="headerlink" title="JDK 内置命令行工具"></a>JDK 内置命令行工具</h2><h2 id="JDK-内置图形化工具"><a href="#JDK-内置图形化工具" class="headerlink" title="JDK 内置图形化工具"></a>JDK 内置图形化工具</h2><h2 id="GC-的背景与一般原理"><a href="#GC-的背景与一般原理" class="headerlink" title="GC 的背景与一般原理"></a>GC 的背景与一般原理</h2><h2 id="串行-GC-并行-GC-（Serial-GC-Parallel-GC）"><a href="#串行-GC-并行-GC-（Serial-GC-Parallel-GC）" class="headerlink" title="串行 GC&#x2F; 并行 GC （Serial GC &#x2F; Parallel GC）"></a>串行 GC&#x2F; 并行 GC （Serial GC &#x2F; Parallel GC）</h2><h2 id="CMS-GC-G1-GC"><a href="#CMS-GC-G1-GC" class="headerlink" title="CMS GC &#x2F; G1 GC"></a>CMS GC &#x2F; G1 GC</h2><h2 id="ZGC-Shenandoah-GC"><a href="#ZGC-Shenandoah-GC" class="headerlink" title="ZGC &#x2F; Shenandoah GC"></a>ZGC &#x2F; Shenandoah GC</h2><h2 id="总结回顾与作业实践"><a href="#总结回顾与作业实践" class="headerlink" title="总结回顾与作业实践"></a>总结回顾与作业实践</h2>]]></content>
