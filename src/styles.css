@@ -194,7 +194,7 @@ a:hover {
 
 .code-block pre {
     margin: 0;
-    padding: 16px 16px 16px 0;   /* 左边留给行号，由 .code-line 控制 */
+    padding: 16px 16px 16px 0;
     border-radius: 0;
     overflow: auto;
     background: transparent;
@@ -205,7 +205,6 @@ a:hover {
     counter-reset: line;
 }
 
-/* 每一行 */
 .code-line {
     display: block;
     position: relative;
@@ -215,7 +214,6 @@ a:hover {
     white-space: pre;
 }
 
-/* 行号 */
 .code-line::before {
     content: counter(line);
     position: absolute;
@@ -229,7 +227,6 @@ a:hover {
     pointer-events: none;
 }
 
-/* 复制按钮 */
 .copy-btn {
     position: absolute;
     top: 8px;
@@ -263,76 +260,50 @@ a:hover {
     }
 }
 
-/* ==== 极致极简文章列表 ==== */
-.home-header {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 24px;
-    font-size: 0.85rem;
-    color: #999;
-}
-
+/* ==== 极致单行制文章列表（方案 B） ==== */
 .post-list-plain {
     display: flex;
     flex-direction: column;
+    gap: 2px; /* 行距极小，非常紧凑 */
 }
 
-.post-item {
-    padding: 16px 0;
-    border-bottom: 1px solid #f0f0f0;
+.post-item-simple {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between; /* 标题和日期分别推向两端 */
+    gap: 16px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f5f5f5; /* 极浅的分隔线 */
 }
 
-.post-item:last-child {
+.post-item-simple:last-child {
     border-bottom: none;
 }
 
-.post-title {
-    margin: 0 0 6px;
+/* 标题：占据主要空间 */
+.post-title-simple {
+    flex: 1;
+    color: #1a1a1a; /* 非常深的灰 */
     font-size: 1rem;
-    font-weight: 500;
-    line-height: 1.5;
-}
-
-.post-title a {
-    color: #222;
-}
-
-.post-title a:hover {
-    color: #0366d6;
-}
-
-.post-meta {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 0.8rem;
-    color: #999;
-    margin-bottom: 6px;
-    flex-wrap: wrap;
-}
-
-.post-tags {
-    display: flex;
-    gap: 8px;
-}
-
-.post-tags .tag {
-    color: #999;
-    background: none;
-    padding: 0;
-    font-size: 0.8rem;
-}
-
-.post-excerpt {
-    margin: 0;
-    color: #777;
-    font-size: 0.85rem;
-    line-height: 1.6;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
+    font-weight: 500; /* 中等偏粗，不显得太笨重 */
+    transition: color 0.15s;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+/* 鼠标悬停时，不仅变色，还加下划线，增加可点击感 */
+.post-title-simple:hover {
+    color: #0366d6;
+    text-decoration: underline; /* 加上下划线 */
+}
+
+/* 日期：固定在右侧，颜色极淡 */
+.post-date-simple {
+    flex-shrink: 0;
+    color: #bbb;
+    font-size: 0.8rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 /* ==== 分页 ==== */
@@ -424,7 +395,6 @@ a:hover {
     margin-bottom: 24px;
     border-bottom: 2px solid #f0f0f0;
     padding-bottom: 8px;
-    /* 允许横向滑动 */
     flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -436,7 +406,7 @@ a:hover {
 }
 
 .goals-tab {
-    flex-shrink: 0; /* 关键：防止被挤扁 */
+    flex-shrink: 0;
     background: none;
     border: none;
     font-size: 1rem;
@@ -449,7 +419,7 @@ a:hover {
     display: flex;
     align-items: center;
     gap: 6px;
-    white-space: nowrap; /* 关键：禁止文字换行 */
+    white-space: nowrap;
 }
 
 .goals-tab:hover {
@@ -467,7 +437,7 @@ a:hover {
     font-weight: 400;
     padding: 2px 6px;
     border-radius: 4px;
-    white-space: nowrap; /* 关键：禁止状态文字竖排 */
+    white-space: nowrap;
 }
 
 .goals-tab.active .tab-status {
@@ -594,15 +564,17 @@ a:hover {
 
 /* ==== 手机端适配汇总 ==== */
 @media (max-width: 600px) {
-    .post-item {
-        padding: 12px 0;
+    .post-item-simple {
+        flex-direction: column;
+        gap: 4px;
+        padding: 10px 0;
     }
-    .post-title {
+    .post-title-simple {
+        white-space: normal; /* 手机上允许标题换行 */
         font-size: 0.95rem;
     }
-    .post-excerpt {
-        font-size: 0.8rem;
-        -webkit-line-clamp: 2; /* 手机上允许两行摘要 */
+    .post-date-simple {
+        font-size: 0.75rem;
     }
     .pagination {
         flex-direction: column;

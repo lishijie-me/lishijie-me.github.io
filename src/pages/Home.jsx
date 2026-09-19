@@ -63,42 +63,23 @@ export default function Home() {
 
     return (
         <div>
-            {/*<div className="home-header">*/}
-            {/*    /!*<h1>文章列表</h1>*!/*/}
-            {/*    <span className="post-count">共 {posts.length} 篇</span>*/}
-            {/*</div>*/}
-
             {posts.length === 0 ? (
                 <p>还没有文章，去 src/posts 新建 .md 文件吧。</p>
             ) : (
                 <>
-                    {/* 极简文章列表 */}
+                    {/* 极致单行制文章列表 */}
                     <div className="post-list-plain">
                         {currentPosts.map((post) => (
-                            <article key={post.slug} className="post-item">
-                                <h2 className="post-title">
-                                    <Link to={`/post/${post.slug}`}>{post.title}</Link>
-                                </h2>
-
-                                <div className="post-meta">
-                                    {post.date && <span className="post-date">{post.date}</span>}
-                                    {post.tags && post.tags.length > 0 && (
-                                        <span className="post-tags">
-                      {post.tags.map((t) => (
-                          <span key={t} className="tag">#{t}</span>
-                      ))}
-                    </span>
-                                    )}
-                                </div>
-
-                                {post.description && (
-                                    <p className="post-excerpt">{post.description}</p>
-                                )}
+                            <article key={post.slug} className="post-item-simple">
+                                <Link to={`/post/${post.slug}`} className="post-title-simple">
+                                    {post.title}
+                                </Link>
+                                <span className="post-date-simple">{post.date}</span>
                             </article>
                         ))}
                     </div>
 
-                    {/* 分页（保持原样） */}
+                    {/* 分页 */}
                     {totalPages > 1 && (
                         <div className="pagination">
                             <button
@@ -111,21 +92,21 @@ export default function Home() {
 
                             <div className="page-numbers">
                                 {getPageNumbers(currentPage, totalPages).map((page, index) =>
-                                        page === '...' ? (
-                                            <span key={`dots-${index}`} className="page-dots">
-                      …
-                    </span>
-                                        ) : (
-                                            <button
-                                                key={page}
-                                                className={`page-num ${
-                                                    page === currentPage ? 'active' : ''
-                                                }`}
-                                                onClick={() => goToPage(page)}
-                                            >
-                                                {page}
-                                            </button>
-                                        )
+                                    page === '...' ? (
+                                        <span key={`dots-${index}`} className="page-dots">
+                                            …
+                                        </span>
+                                    ) : (
+                                        <button
+                                            key={page}
+                                            className={`page-num ${
+                                                page === currentPage ? 'active' : ''
+                                            }`}
+                                            onClick={() => goToPage(page)}
+                                        >
+                                            {page}
+                                        </button>
+                                    )
                                 )}
                             </div>
 
