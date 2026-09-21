@@ -23,8 +23,8 @@ export default function About() {
             <section className="about-section">
                 <h2>简介</h2>
                 <p>
-                    你好，我是 <strong>你的名字</strong>，目前在做 全栈开发。
-                    平时喜欢折腾各种工具，写点东西记录踩过的坑。
+                    九年的技术老兵一枚，也是AI领域的新人一枚 <strong></strong>，目前在做 全栈开发。
+                    平时喜欢折腾各种工具，写点东西记录踩过的坑或者 分享学到的新鲜东西
                 </p>
             </section>
 
@@ -43,13 +43,13 @@ export default function About() {
                 <ul className="contact-list">
                     <li>
                         GitHub：
-                        <a href="https://github.com/你的用户名" target="_blank" rel="noreferrer">
-                            @你的用户名
+                        <a href="https://github.com/lishijie-me" target="_blank" rel="noreferrer">
+                            @lishijie-me
                         </a>
                     </li>
                     <li>
                         邮箱：
-                        <a href="mailto:you@example.com">you@example.com</a>
+                        <a href="mailto:you@qq.com">you@qq.com</a>
                     </li>
                 </ul>
             </section>

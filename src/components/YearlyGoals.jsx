@@ -20,53 +20,42 @@ const GOALS_DATA = {
     2026: {
         status: '进行中',
         goals: [
-            { id: 1, icon: '📚', title: '读完 12 本技术/非技术书籍', target: '目标：每月至少 1 本，涵盖架构、产品、人文', progress: '✅ 已完成 8 本·《重构》《设计模式》《人类群星闪耀时》等', checked: true },
-            { id: 2, icon: '📝', title: '输出 50 篇技术文章/笔记', target: '目标：平均每周 1 篇，沉淀知识体系', progress: '✅ 已完成 42 篇·持续输出中', checked: true },
-            { id: 3, icon: '💻', title: '完成 3 个个人开源项目', target: '目标：至少 1 个项目获得 100+ Star', progress: '✅ 已完成 2 个，第 3 个正在规划中', checked: false },
-            { id: 4, icon: '🏃', title: '坚持运动，全年跑步 500 公里', target: '目标：每周 2-3 次，保持身体健康', progress: '✅ 已完成 380 公里·距离目标还有 120 公里 💪', checked: false },
-            { id: 5, icon: '✈️', title: '去 2 个新的城市旅行', target: '目标：拓宽视野，感受不同地域文化', progress: '✅ 已完成 1 个（成都），下一个计划去大理', checked: false },
+            { id: 1, icon: '📚', title: '读完 1 本技术/非技术书籍', target: '目标：每月至少 1 本，涵盖架构、产品、人文', progress: '✅ 已完成 0 本·《设计模式》等', checked: false },
+            { id: 2, icon: '📝', title: '输出 10 篇技术文章/笔记', target: '目标：平均每周 1 篇，沉淀知识体系', progress: '✅ 已完成 0 篇·持续输出中', checked: false },
+            // { id: 3, icon: '💻', title: '完成 3 个个人开源项目', target: '目标：至少 1 个项目获得 100+ Star', progress: '✅ 已完成 2 个，第 3 个正在规划中', checked: false },
+            // { id: 4, icon: '🏃', title: '坚持运动，全年跑步 500 公里', target: '目标：每周 2-3 次，保持身体健康', progress: '✅ 已完成 380 公里·距离目标还有 120 公里 💪', checked: false },
+            // { id: 5, icon: '✈️', title: '去 2 个新的城市旅行', target: '目标：拓宽视野，感受不同地域文化', progress: '✅ 已完成 1 个（成都），下一个计划去大理', checked: false },
 
             // 👇 这里是新增的百日挑战。只需要改这里 👇
             {
                 id: 6,
                 icon: '🔥',
-                title: '百日挑战：连续 100 天写代码',
-                target: '目标：每天投入 30 分钟，不间断',
-                startDate: '2026-09-19',  // 填写你的开始日期
+                title: '百日挑战：连续 100 天',
+                target: '目标：每天不间断',
+                startDate: '2026-09-20',  // 填写你的开始日期
                 totalDays: 100,           // 挑战总天数
                 checked: false
             }
             // 👆 新增结束 👆
         ],
         summary: {
-            text: '整体进展顺利，技术输出和读书计划超额完成。下半年重点冲刺开源项目和旅行计划。',
-            footer: '🔥 当前完成度：3.5/5·继续加油！'
+            text: '整体启动，技术输出和读书计划正在进行。',
+            footer: '🔥 当前完成度：0/3·继续加油！'
         }
     },
     2025: {
         status: '已完成',
         goals: [
             { id: 1, icon: '📚', title: '读完 10 本书', target: '目标：保持阅读习惯', progress: '✅ 已完成 10 本', checked: true },
-            { id: 2, icon: '📝', title: '输出 30 篇文章', target: '目标：每月 2-3 篇', progress: '✅ 已完成 30 篇', checked: true },
         ],
         summary: {
             text: '2025 年目标全部达成，2026 年继续加油。',
-            footer: '🎉 完成度：5/5·完美收官！'
-        }
-    },
-    2024: {
-        status: '已完成',
-        goals: [
-            { id: 1, icon: '💻', title: '完成 1 个开源项目', target: '目标：获得 50+ Star', progress: '✅ 已完成 1 个（获得 128 Star）', checked: true },
-        ],
-        summary: {
-            text: '开了个好头，继续保持。',
-            footer: '👍 完成度：4/5'
+            footer: '🎉 完成度：1/1·完美收官！'
         }
     }
 };
 
-const YEARS = ['2026', '2025', '2024'];
+const YEARS = ['2026', '2025'];
 
 export default function YearlyGoals() {
     const [activeYear, setActiveYear] = useState('2026');
