@@ -606,3 +606,118 @@ a:hover {
         padding: 3px 8px;
     }
 }
+
+/* ==== 随笔页面 ==== */
+.notes-page-title {
+    margin: 0 0 4px;
+    font-size: 1.5rem;
+}
+
+.notes-page-sub {
+    margin: 0 0 32px;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* 时间线容器 */
+.timeline {
+    position: relative;
+    padding-left: 4px;
+}
+
+/* 左侧竖线 */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: #eaeaea;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 28px;
+    padding-bottom: 28px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+/* 圆点 */
+.timeline-dot {
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #0366d6;
+    box-shadow: 0 0 0 3px #fafafa;
+}
+
+/* 日期 */
+.timeline-date {
+    font-size: 0.8rem;
+    color: #999;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    margin-bottom: 4px;
+}
+
+/* 标题 */
+.timeline-title {
+    margin: 0 0 6px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.timeline-title a {
+    color: #111;
+}
+
+.timeline-title a:hover {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+/* 摘要 */
+.timeline-excerpt {
+    margin: 0;
+    color: #777;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* ==== 随笔详情页 ==== */
+.note-detail-header {
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.note-detail-date {
+    font-size: 0.85rem;
+    color: #999;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    margin-bottom: 8px;
+}
+
+.note-detail-title {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* ==== 手机端适配 ==== */
+@media (max-width: 600px) {
+    .note-detail-title {
+        font-size: 1.35rem;
+    }
+    .timeline-title {
+        font-size: 1rem;
+    }
+}

@@ -1,6 +1,7 @@
 import GithubSlugger from 'github-slugger';
 
-const modules = import.meta.glob('../posts/*.md', {
+// 改成 ** 递归匹配所有子目录
+const modules = import.meta.glob('../posts/**/*.md', {
     query: '?raw',
     import: 'default',
     eager: true,
@@ -17,7 +18,6 @@ function parseFrontmatter(raw) {
         const key = line.slice(0, idx).trim();
         let value = line.slice(idx + 1).trim().replace(/^["']|["']$/g, '');
 
-        // 支持 tags: [react, vite]
         if (value.startsWith('[') && value.endsWith(']')) {
             value = value
                 .slice(1, -1)
@@ -70,24 +70,44 @@ function slugFromPath(path) {
     return path.split('/').pop().replace(/\.md$/, '');
 }
 
+function getCategoryFromPath(path) {
+    return path.includes('/notes/') ? 'notes' : 'tech';
+}
+
+function mapPost([path, raw]) {
+    const { data, content } = parseFrontmatter(raw);
+    const slug = slugFromPath(path);
+    return {
+        slug,
+        title: data.title || slug,
+        date: data.date || '',
+        description: data.description || extractExcerpt(content),
+        cover: data.cover || '',
+        tags: Array.isArray(data.tags) ? data.tags : data.tags ? [data.tags] : [],
+        category: getCategoryFromPath(path),
+        content,
+    };
+}
+
+// 技术文章
 export function getAllPosts() {
     return Object.entries(modules)
-        .map(([path, raw]) => {
-            const { data, content } = parseFrontmatter(raw);
-            const slug = slugFromPath(path);
-            return {
-                slug,
-                title: data.title || slug,
-                date: data.date || '',
-                description: data.description || extractExcerpt(content),
-                cover: data.cover || '',
-                tags: Array.isArray(data.tags) ? data.tags : data.tags ? [data.tags] : [],
-                content,
-            };
-        })
+        .filter(([path]) => getCategoryFromPath(path) === 'tech')
+        .map(mapPost)
         .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
+// 随笔
+export function getAllNotes() {
+    return Object.entries(modules)
+        .filter(([path]) => getCategoryFromPath(path) === 'notes')
+        .map(mapPost)
+        .sort((a, b) => (a.date < b.date ? 1 : -1));
+}
+
+// 详情页：同时搜两类
 export function getPostBySlug(slug) {
-    return getAllPosts().find((post) => post.slug === slug);
+    return Object.entries(modules)
+        .map(mapPost)
+        .find((post) => post.slug === slug);
 }
